@@ -43,6 +43,6 @@ add_action('admin_menu', 'trc_set_up_import_page');
 function trc_load_admin_resources(){
     wp_enqueue_style('trc-admin-styles', plugins_url('/assets/styles/backend.css', __FILE__ ));
     wp_enqueue_script('trc-admin-script', plugins_url('/assets/js/sync-cat-data.js', __FILE__), array('jquery'));
-    wp_localize_script('trc-admin-script', 'ajax_object', 'ajaxObject', array('ajax_url' => admin_url('admin-ajax.php'), 'trc_nonce' => wp_create_nonce('trc_nonce')));
+    wp_localize_script('trc-admin-script', 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php'), 'trc_nonce' => wp_create_nonce('trc_nonce')));
 }
 add_action( 'admin_enqueue_scripts', 'trc_load_admin_resources');

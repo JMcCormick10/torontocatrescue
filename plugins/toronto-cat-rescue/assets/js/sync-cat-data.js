@@ -5,9 +5,9 @@ jQuery(document).ready(function($){
         nonce: 'trc_nonce',
         action: 'trc_import_cats'
     }
-    $.post(ajaxObject.ajax_url, data, function(response){
+    $.post(ajax_object.ajax_url, data, function(response){
         console.log(response);
-   })
+   });
 
    function displayError(){
 
@@ -17,5 +17,6 @@ jQuery(document).ready(function($){
 
    }
 
+   });
 
 });
