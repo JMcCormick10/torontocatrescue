@@ -127,6 +127,9 @@
         <?php endforeach;?>
     </div>
 </div>
+
+<button id="myBtn">Open Modal</button>
+
 <div class="tcr-cat-modal">
     <div class="tcr-cat-modal-content">
         <span class="tcr-exit-modal">&times;</span>
