@@ -17,7 +17,7 @@
             <label for="cat-breed">Breed:</label>
             <div>
                 <select id="cat-breed">
-                    <!-- <option value="">--Please choose an option--</option> -->
+                    <!-- <option value="">Please choose an option</option> -->
                     <?php
                         foreach($breeds as $breed) :
                         $breed_list = (array) $breed;
@@ -111,7 +111,7 @@
             </select>
         </div>
     </div>
-    <span class="tcr-apply-to-adopt submit-filter">View More</span>
+    <span class="tcr-apply-to-adopt">Filter</span>
     </div>
 <!-- you got it boss -->
     <h2>Cat's Available for Adoption</h2>
