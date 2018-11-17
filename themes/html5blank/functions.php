@@ -449,4 +449,10 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
     return '<h2>' . $content . '</h2>';
 }
 
-?>
+function d($obj) {
+    echo '<pre>';
+        print_r($obj);
+    echo '</pre>';
+}
+
+// d(get_the_content());
