@@ -17,7 +17,7 @@
             <label for="cat-breed">Breed:</label>
             <div>
                 <select id="cat-breed">
-                    <!-- <option value="">--Please choose an option--</option> -->
+                    <!-- <option value="">Please choose an option</option> -->
                     <?php
                         foreach($breeds as $breed) :
                         $breed_list = (array) $breed;
