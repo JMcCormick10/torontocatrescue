@@ -46,7 +46,6 @@ function trc_load_admin_resources(){
 }
 add_action( 'admin_enqueue_scripts', 'trc_load_admin_resources');
 
-add_action('wp_enqueue_scripts', 'tcr_load_front_end_resources');
 /* ----------------------------------------------- *\
                     EPOSE SHORTCODE
 \* ----------------------------------------------- */
