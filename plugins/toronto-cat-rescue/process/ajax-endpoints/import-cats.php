@@ -1,16 +1,47 @@
 <?php
 
 add_action('wp_ajax_trc_import_cats', 'trc_import_cats');
+
 function trc_import_cats(){
 
+    
+    $pet_object = petFinder::getAllPets();
+    $pets = $pet_object->petfinder->pets->pet;
+    
 
-    //the curl request
-    /*LOOP THROUGH EACH CAT
-        -CHECK CAT ID DOESN'T ALREADY EXIST
-    */
-    if (trc_does_cat_already_exist()){
-        exit();
+
+    foreach ($pets as $pet){
+        $cat_id;
+        if (trc_does_cat_already_exist($pet['id'])){
+            //get the existing cat post id
+            $cat_id;
+        }
+        else{
+            //insert the cat post
+            trc_insert_cat_post();
+            $cat_id;
+        }
+
+        //insert/overwrite cat post meta
+        trc_insert_cat_post_meta($cat_id);
+
+        /*
+            META VALUES TO STORE
+            options as serialized array
+            status
+            age
+            size
+            media photos
+            id 
+            breeds
+            name
+            sex
+            description
+            mix
+        */
     }
+    
+    
         
     /*--INSERT CAT AS POST
 

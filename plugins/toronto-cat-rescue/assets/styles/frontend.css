@@ -1,0 +1,77 @@
+.tcr-cat-modal {
+  position: fixed;
+  display: none;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.7); }
+  .tcr-cat-modal .tcr-cat-modal-content {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    max-width: 600px;
+    width: 95%;
+    margin: 0 auto;
+    min-height: 300px;
+    border-radius: 10px; }
+    .tcr-cat-modal .tcr-cat-modal-content .tcr-exit-modal {
+      color: #000;
+      font-size: 50px;
+      right: 10px;
+      top: -15px;
+      position: absolute;
+      font-weight: 900; }
+      .tcr-cat-modal .tcr-cat-modal-content .tcr-exit-modal:hover {
+        cursor: pointer; }
+
+.tcr-cat-modal-show {
+  display: block; }
+
+.tcr-archive-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px; }
+  .tcr-archive-list .tcr-item {
+    width: 25%;
+    padding: 0 15px;
+    margin-bottom: 15px; }
+    .tcr-archive-list .tcr-item h3 {
+      color: #24558d;
+      font-size: 25px;
+      margin-bottom: 0; }
+    @media screen and (max-width: 992px) {
+      .tcr-archive-list .tcr-item {
+        width: 50%; } }
+    @media screen and (max-width: 560px) {
+      .tcr-archive-list .tcr-item {
+        width: 100%; } }
+    .tcr-archive-list .tcr-item .tcr-cat-image-container {
+      width: 100%;
+      height: 200px;
+      overflow: hidden; }
+      .tcr-archive-list .tcr-item .tcr-cat-image-container:hover {
+        cursor: pointer; }
+      .tcr-archive-list .tcr-item .tcr-cat-image-container .tcr-cat-image {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        transition: 0.3s; }
+        .tcr-archive-list .tcr-item .tcr-cat-image-container .tcr-cat-image:hover {
+          transform: scale(1.1); }
+    .tcr-archive-list .tcr-item .tcr-apply-to-adopt {
+      display: inline-block;
+      background-color: #41b1a0;
+      padding: 7px 15px;
+      border-radius: 10px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px; }
+      .tcr-archive-list .tcr-item .tcr-apply-to-adopt:hover {
+        cursor: pointer; }
+
+/*# sourceMappingURL=frontend.css.map */
