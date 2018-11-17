@@ -146,13 +146,16 @@
                 <p class="breed"></p>
                 <p class="age"></p>
                 <p class="description"></p>
-                <span class="tcr-apply-to-adopt">View More</span>
+                <button class="tcr-apply-to-adopt">View More</button>
 
             </div>
 
         <?php endforeach;?>
     </div>
 </div>
+
+<button id="myBtn">Open Modal</button>
+
 <div class="tcr-cat-modal">
     <div class="tcr-cat-modal-content">
         <span class="tcr-exit-modal">&times;</span>

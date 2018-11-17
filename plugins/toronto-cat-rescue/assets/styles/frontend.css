@@ -1,48 +1,83 @@
 @import url("https://fonts.googleapis.com/css?family=Archivo+Narrow:400,700|Lora:400,700");
+html body {
+  font-size: 1.6rem; }
+  html body.no-overflow {
+    overflow: hidden; }
+
 .tcr-cat-modal {
-  position: fixed;
   display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
   left: 0;
   top: 0;
   width: 100%;
+  /* Full width */
   height: 100%;
-  z-index: 2;
-  background-color: rgba(0, 0, 0, 0.7); }
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */ }
+  .tcr-cat-modal.tcr-cat-modal-show {
+    display: block; }
   .tcr-cat-modal .tcr-cat-modal-content {
-    overflow-y: scroll;
-    max-height: 100%;
-    position: fixed;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #fff;
-    max-width: 600px;
-    width: 95%;
-    margin: 0 auto;
-    min-height: 300px;
-    border-radius: 10px; }
+    position: relative;
+    background-color: #fefefe;
+    margin: 15px auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+            animation-name: animatetop;
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s; }
     .tcr-cat-modal .tcr-cat-modal-content .tcr-exit-modal {
-      color: #000;
-      font-size: 50px;
-      right: 10px;
-      top: -15px;
-      position: absolute;
-      font-weight: 900; }
-      .tcr-cat-modal .tcr-cat-modal-content .tcr-exit-modal:hover {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold; }
+      .tcr-cat-modal .tcr-cat-modal-content .tcr-exit-modal:hover, .tcr-cat-modal .tcr-cat-modal-content .tcr-exit-modal:focus {
+        color: black;
+        text-decoration: none;
         cursor: pointer; }
 
-.tcr-cat-modal-show {
-  display: block; }
+@-webkit-keyframes animatetop {
+  from {
+    top: 100px;
+    opacity: 0; }
+  to {
+    top: 0;
+    opacity: 1; } }
 
+@keyframes animatetop {
+  from {
+    top: 100px;
+    opacity: 0; }
+  to {
+    top: 0;
+    opacity: 1; } }
 .tcr-archive-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 0 -15px; }
   .tcr-archive-list .tcr-item {
     width: 25%;
     padding: 0 15px;
     margin-bottom: 15px; }
     .tcr-archive-list .tcr-item h3 {
+      font-family: 'Archivo Narrow', Arial, sans-serif;
       color: #24558d;
       font-size: 25px;
       margin-bottom: 0; }
@@ -63,19 +98,32 @@
         height: 100%;
         background-size: cover;
         background-position: center;
+        -webkit-transition: 0.3s;
         transition: 0.3s; }
         .tcr-archive-list .tcr-item .tcr-cat-image-container .tcr-cat-image:hover {
-          transform: scale(1.1); }
+          -webkit-transform: scale(1.1);
+                  transform: scale(1.1); }
     .tcr-archive-list .tcr-item .tcr-apply-to-adopt {
       display: inline-block;
-      background-color: #41b1a0;
-      padding: 7px 15px;
-      border-radius: 10px;
       color: #fff;
-      font-weight: 700;
-      font-size: 15px; }
-      .tcr-archive-list .tcr-item .tcr-apply-to-adopt:hover {
-        cursor: pointer; }
+      background-color: #41b1a0;
+      border: 1px solid #41b1a0;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      text-decoration: none;
+      border-radius: 0px;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s;
+      font-weight: bold;
+      font-family: 'Archivo Narrow', Arial, sans-serif; }
+      .tcr-archive-list .tcr-item .tcr-apply-to-adopt:hover, .tcr-archive-list .tcr-item .tcr-apply-to-adopt:focus, .tcr-archive-list .tcr-item .tcr-apply-to-adopt:active {
+        color: #fff;
+        background-color: #24558d;
+        border: 1px solid #24558d;
+        text-decoration: none;
+        outline: none;
+        -webkit-box-shadow: none;
+                box-shadow: none; }
 
 .tcr-apply-button {
   display: inline-block;
@@ -86,22 +134,21 @@
   padding: 8px 20px;
   text-decoration: none;
   border-radius: 0px;
+  -webkit-transition: all 0.2s;
   transition: all 0.2s;
   font-weight: bold;
-  font-family: 'Archivo Narrow', sans-serif; }
+  font-family: 'Archivo Narrow', Arial, sans-serif; }
   .tcr-apply-button:hover, .tcr-apply-button:focus, .tcr-apply-button:active {
     color: #fff;
     background-color: #24558d;
     border: 1px solid #24558d;
     text-decoration: none;
     outline: none;
-    box-shadow: none; }
-
-.tcr-pet-form {
-  display: none; }
+    -webkit-box-shadow: none;
+            box-shadow: none; }
 
 form.wpcf7-form {
-  font-family: 'Lora', serif; }
+  font-family: 'Lora', Georgia, serif; }
   form.wpcf7-form p {
     margin: 0px;
     height: 0px;
@@ -160,6 +207,99 @@ form.wpcf7-form {
     background-color: #fff;
     border: 1px solid #000;
     margin-bottom: 5px; }
+    form.wpcf7-form input[type=text]:placeholder-shown, form.wpcf7-form input[type=text]::-webkit-input-placeholder, form.wpcf7-form input[type=text]::-webkit-input-placeholder, form.wpcf7-form input[type=text]::-moz-placeholder, form.wpcf7-form input[type=text]:-ms-input-placeholder, form.wpcf7-form input[type=text]:-moz-placeholder, form.wpcf7-form input[type=text]::-ms-input-placeholder,
+    form.wpcf7-form input[type=date]:placeholder-shown,
+    form.wpcf7-form input[type=date]::-webkit-input-placeholder,
+    form.wpcf7-form input[type=date]::-webkit-input-placeholder,
+    form.wpcf7-form input[type=date]::-moz-placeholder,
+    form.wpcf7-form input[type=date]:-ms-input-placeholder,
+    form.wpcf7-form input[type=date]:-moz-placeholder,
+    form.wpcf7-form input[type=date]::-ms-input-placeholder,
+    form.wpcf7-form input[type=tel]:placeholder-shown,
+    form.wpcf7-form input[type=tel]::-webkit-input-placeholder,
+    form.wpcf7-form input[type=tel]::-webkit-input-placeholder,
+    form.wpcf7-form input[type=tel]::-moz-placeholder,
+    form.wpcf7-form input[type=tel]:-ms-input-placeholder,
+    form.wpcf7-form input[type=tel]:-moz-placeholder,
+    form.wpcf7-form input[type=tel]::-ms-input-placeholder,
+    form.wpcf7-form input[type=email]
+    input[type=number]:placeholder-shown,
+    form.wpcf7-form input[type=email]
+    input[type=number]::-webkit-input-placeholder,
+    form.wpcf7-form input[type=email]
+    input[type=number]::-webkit-input-placeholder,
+    form.wpcf7-form input[type=email]
+    input[type=number]::-moz-placeholder,
+    form.wpcf7-form input[type=email]
+    input[type=number]:-ms-input-placeholder,
+    form.wpcf7-form input[type=email]
+    input[type=number]:-moz-placeholder,
+    form.wpcf7-form input[type=email]
+    input[type=number]::-ms-input-placeholder,
+    form.wpcf7-form textarea:placeholder-shown,
+    form.wpcf7-form textarea::-webkit-input-placeholder,
+    form.wpcf7-form textarea::-webkit-input-placeholder,
+    form.wpcf7-form textarea::-moz-placeholder,
+    form.wpcf7-form textarea:-ms-input-placeholder,
+    form.wpcf7-form textarea:-moz-placeholder,
+    form.wpcf7-form textarea::-ms-input-placeholder,
+    form.wpcf7-form select:placeholder-shown,
+    form.wpcf7-form select::-webkit-input-placeholder,
+    form.wpcf7-form select::-webkit-input-placeholder,
+    form.wpcf7-form select::-moz-placeholder,
+    form.wpcf7-form select:-ms-input-placeholder,
+    form.wpcf7-form select:-moz-placeholder,
+    form.wpcf7-form select::-ms-input-placeholder,
+    form.wpcf7-form .age-gate-input:placeholder-shown,
+    form.wpcf7-form .age-gate-input::-webkit-input-placeholder,
+    form.wpcf7-form .age-gate-input::-webkit-input-placeholder,
+    form.wpcf7-form .age-gate-input::-moz-placeholder,
+    form.wpcf7-form .age-gate-input:-ms-input-placeholder,
+    form.wpcf7-form .age-gate-input:-moz-placeholder,
+    form.wpcf7-form .age-gate-input::-ms-input-placeholder,
+    form.wpcf7-form .wpcf7-text:placeholder-shown,
+    form.wpcf7-form .wpcf7-text::-webkit-input-placeholder,
+    form.wpcf7-form .wpcf7-text::-webkit-input-placeholder,
+    form.wpcf7-form .wpcf7-text::-moz-placeholder,
+    form.wpcf7-form .wpcf7-text:-ms-input-placeholder,
+    form.wpcf7-form .wpcf7-text:-moz-placeholder,
+    form.wpcf7-form .wpcf7-text::-ms-input-placeholder,
+    form.wpcf7-form .wpcf7-date:placeholder-shown,
+    form.wpcf7-form .wpcf7-date::-webkit-input-placeholder,
+    form.wpcf7-form .wpcf7-date::-webkit-input-placeholder,
+    form.wpcf7-form .wpcf7-date::-moz-placeholder,
+    form.wpcf7-form .wpcf7-date:-ms-input-placeholder,
+    form.wpcf7-form .wpcf7-date:-moz-placeholder,
+    form.wpcf7-form .wpcf7-date::-ms-input-placeholder,
+    form.wpcf7-form .wpcf7-textarea:placeholder-shown,
+    form.wpcf7-form .wpcf7-textarea::-webkit-input-placeholder,
+    form.wpcf7-form .wpcf7-textarea::-webkit-input-placeholder,
+    form.wpcf7-form .wpcf7-textarea::-moz-placeholder,
+    form.wpcf7-form .wpcf7-textarea:-ms-input-placeholder,
+    form.wpcf7-form .wpcf7-textarea:-moz-placeholder,
+    form.wpcf7-form .wpcf7-textarea::-ms-input-placeholder,
+    form.wpcf7-form .wpcf7-select:placeholder-shown,
+    form.wpcf7-form .wpcf7-select::-webkit-input-placeholder,
+    form.wpcf7-form .wpcf7-select::-webkit-input-placeholder,
+    form.wpcf7-form .wpcf7-select::-moz-placeholder,
+    form.wpcf7-form .wpcf7-select:-ms-input-placeholder,
+    form.wpcf7-form .wpcf7-select:-moz-placeholder,
+    form.wpcf7-form .wpcf7-select::-ms-input-placeholder,
+    form.wpcf7-form .wpcf7-number:placeholder-shown,
+    form.wpcf7-form .wpcf7-number::-webkit-input-placeholder,
+    form.wpcf7-form .wpcf7-number::-webkit-input-placeholder,
+    form.wpcf7-form .wpcf7-number::-moz-placeholder,
+    form.wpcf7-form .wpcf7-number:-ms-input-placeholder,
+    form.wpcf7-form .wpcf7-number:-moz-placeholder,
+    form.wpcf7-form .wpcf7-number::-ms-input-placeholder,
+    form.wpcf7-form .wpcf7-form-control-signature-body:placeholder-shown,
+    form.wpcf7-form .wpcf7-form-control-signature-body::-webkit-input-placeholder,
+    form.wpcf7-form .wpcf7-form-control-signature-body::-webkit-input-placeholder,
+    form.wpcf7-form .wpcf7-form-control-signature-body::-moz-placeholder,
+    form.wpcf7-form .wpcf7-form-control-signature-body:-ms-input-placeholder,
+    form.wpcf7-form .wpcf7-form-control-signature-body:-moz-placeholder,
+    form.wpcf7-form .wpcf7-form-control-signature-body::-ms-input-placeholder {
+      color: #000; }
     form.wpcf7-form input[type=text]:placeholder-shown, form.wpcf7-form input[type=text]::placeholder, form.wpcf7-form input[type=text]::-webkit-input-placeholder, form.wpcf7-form input[type=text]::-moz-placeholder, form.wpcf7-form input[type=text]:-ms-input-placeholder, form.wpcf7-form input[type=text]:-moz-placeholder, form.wpcf7-form input[type=text]::-ms-input-placeholder,
     form.wpcf7-form input[type=date]:placeholder-shown,
     form.wpcf7-form input[type=date]::placeholder,
@@ -319,9 +459,10 @@ form.wpcf7-form {
     padding: 8px 20px;
     text-decoration: none;
     border-radius: 0px;
+    -webkit-transition: all 0.2s;
     transition: all 0.2s;
     font-weight: bold;
-    font-family: 'Archivo Narrow', sans-serif; }
+    font-family: 'Archivo Narrow', Arial, sans-serif; }
     form.wpcf7-form button:hover, form.wpcf7-form button:focus, form.wpcf7-form button:active,
     form.wpcf7-form input[type=button]:hover,
     form.wpcf7-form input[type=button]:focus,
@@ -334,10 +475,15 @@ form.wpcf7-form {
       border: 1px solid #24558d;
       text-decoration: none;
       outline: none;
-      box-shadow: none; }
+      -webkit-box-shadow: none;
+              box-shadow: none; }
   form.wpcf7-form .fill-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center; }
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
     form.wpcf7-form .fill-container .fill-6 {
       display: inline-block;
       width: 16.666666%;
@@ -372,20 +518,46 @@ form.wpcf7-form {
     form.wpcf7-form .wpcf7-form-control-signature-wrap canvas {
       width: 100%; }
   form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-add {
+    display: inline-block;
     color: #fff;
-    background-color: #5cb85c;
-    border: 1px solid #5cb85c; }
+    background-color: #41b1a0;
+    border: 1px solid #41b1a0;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 0px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    font-weight: bold;
+    font-family: 'Archivo Narrow', Arial, sans-serif; }
     form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-add:hover, form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-add:focus, form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-add:active {
-      color: #5cb85c;
-      background-color: #fff;
-      border: 1px solid #5cb85c; }
+      color: #fff;
+      background-color: #24558d;
+      border: 1px solid #24558d;
+      text-decoration: none;
+      outline: none;
+      -webkit-box-shadow: none;
+              box-shadow: none; }
   form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-remove {
+    display: inline-block;
     color: #fff;
-    background-color: #d9534f;
-    border: 1px solid #d9534f; }
+    background-color: #41b1a0;
+    border: 1px solid #41b1a0;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 0px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    font-weight: bold;
+    font-family: 'Archivo Narrow', Arial, sans-serif; }
     form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-remove:hover, form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-remove:focus, form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-remove:active {
-      color: #d9534f !important;
-      background-color: #fff !important;
-      border: 1px solid #d9534f !important; }
+      color: #fff;
+      background-color: #24558d;
+      border: 1px solid #24558d;
+      text-decoration: none;
+      outline: none;
+      -webkit-box-shadow: none;
+              box-shadow: none; }
 
 /*# sourceMappingURL=frontend.css.map */
