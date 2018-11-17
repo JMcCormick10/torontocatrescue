@@ -328,6 +328,22 @@ form.wpcf7-form {
       outline: none;
       -webkit-box-shadow: none;
               box-shadow: none; }
+  form.wpcf7-form .fill-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    form.wpcf7-form .fill-container .fill-6 {
+      display: inline-block;
+      width: 16.666666%;
+      padding-left: 5px;
+      padding-right: 5px; }
+      form.wpcf7-form .fill-container .fill-6:first-child {
+        padding-left: 0px; }
+      form.wpcf7-form .fill-container .fill-6:last-child {
+        padding-right: 0px; }
   form.wpcf7-form .wrap {
     margin-bottom: 10px;
     clear: both; }
@@ -348,12 +364,25 @@ form.wpcf7-form {
         width: 70%; }
       form.wpcf7-form .wrap.right.small {
         width: 30%; }
-    form.wpcf7-form .wrap.fill-6 {
-      display: inline-block;
-      width: 16.666666%; }
   form.wpcf7-form .wpcf7-form-control-signature-wrap {
     width: 100% !important; }
     form.wpcf7-form .wpcf7-form-control-signature-wrap canvas {
       width: 100%; }
+  form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-add {
+    color: #fff !important;
+    background-color: #5cb85c !important;
+    border: 1px solid #5cb85c !important; }
+    form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-add:hover, form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-add:focus, form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-add:active {
+      color: #5cb85c !important;
+      background-color: #fff !important;
+      border: 1px solid #5cb85c !important; }
+  form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-remove {
+    color: #fff !important;
+    background-color: #d9534f !important;
+    border: 1px solid #d9534f !important; }
+    form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-remove:hover, form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-remove:focus, form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-remove:active {
+      color: #d9534f !important;
+      background-color: #fff !important;
+      border: 1px solid #d9534f !important; }
 
 /*# sourceMappingURL=frontend.css.map */
