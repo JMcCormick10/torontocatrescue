@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Archivo+Narrow:400,700|Lora:400,700");
+html body {
+  font-size: 1.6rem; }
+
 .tcr-cat-modal {
   position: fixed;
   display: none;
@@ -45,6 +48,7 @@
     padding: 0 15px;
     margin-bottom: 15px; }
     .tcr-archive-list .tcr-item h3 {
+      font-family: 'Archivo Narrow', Arial, sans-serif;
       color: #24558d;
       font-size: 25px;
       margin-bottom: 0; }
@@ -72,14 +76,25 @@
                   transform: scale(1.1); }
     .tcr-archive-list .tcr-item .tcr-apply-to-adopt {
       display: inline-block;
-      background-color: #41b1a0;
-      padding: 7px 15px;
-      border-radius: 10px;
       color: #fff;
-      font-weight: 700;
-      font-size: 15px; }
-      .tcr-archive-list .tcr-item .tcr-apply-to-adopt:hover {
-        cursor: pointer; }
+      background-color: #41b1a0;
+      border: 1px solid #41b1a0;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      text-decoration: none;
+      border-radius: 0px;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s;
+      font-weight: bold;
+      font-family: 'Archivo Narrow', Arial, sans-serif; }
+      .tcr-archive-list .tcr-item .tcr-apply-to-adopt:hover, .tcr-archive-list .tcr-item .tcr-apply-to-adopt:focus, .tcr-archive-list .tcr-item .tcr-apply-to-adopt:active {
+        color: #fff;
+        background-color: #24558d;
+        border: 1px solid #24558d;
+        text-decoration: none;
+        outline: none;
+        -webkit-box-shadow: none;
+                box-shadow: none; }
 
 .tcr-apply-button {
   display: inline-block;
@@ -93,7 +108,7 @@
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   font-weight: bold;
-  font-family: 'Archivo Narrow', sans-serif; }
+  font-family: 'Archivo Narrow', Arial, sans-serif; }
   .tcr-apply-button:hover, .tcr-apply-button:focus, .tcr-apply-button:active {
     color: #fff;
     background-color: #24558d;
@@ -103,11 +118,8 @@
     -webkit-box-shadow: none;
             box-shadow: none; }
 
-.tcr-pet-form {
-  display: none; }
-
 form.wpcf7-form {
-  font-family: 'Lora', serif; }
+  font-family: 'Lora', Georgia, serif; }
   form.wpcf7-form p {
     margin: 0px;
     height: 0px;
@@ -421,7 +433,7 @@ form.wpcf7-form {
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
     font-weight: bold;
-    font-family: 'Archivo Narrow', sans-serif; }
+    font-family: 'Archivo Narrow', Arial, sans-serif; }
     form.wpcf7-form button:hover, form.wpcf7-form button:focus, form.wpcf7-form button:active,
     form.wpcf7-form input[type=button]:hover,
     form.wpcf7-form input[type=button]:focus,
@@ -477,20 +489,46 @@ form.wpcf7-form {
     form.wpcf7-form .wpcf7-form-control-signature-wrap canvas {
       width: 100%; }
   form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-add {
+    display: inline-block;
     color: #fff;
-    background-color: #5cb85c;
-    border: 1px solid #5cb85c; }
+    background-color: #41b1a0;
+    border: 1px solid #41b1a0;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 0px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    font-weight: bold;
+    font-family: 'Archivo Narrow', Arial, sans-serif; }
     form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-add:hover, form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-add:focus, form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-add:active {
-      color: #5cb85c;
-      background-color: #fff;
-      border: 1px solid #5cb85c; }
+      color: #fff;
+      background-color: #24558d;
+      border: 1px solid #24558d;
+      text-decoration: none;
+      outline: none;
+      -webkit-box-shadow: none;
+              box-shadow: none; }
   form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-remove {
+    display: inline-block;
     color: #fff;
-    background-color: #d9534f;
-    border: 1px solid #d9534f; }
+    background-color: #41b1a0;
+    border: 1px solid #41b1a0;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 0px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    font-weight: bold;
+    font-family: 'Archivo Narrow', Arial, sans-serif; }
     form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-remove:hover, form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-remove:focus, form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-remove:active {
-      color: #d9534f !important;
-      background-color: #fff !important;
-      border: 1px solid #d9534f !important; }
+      color: #fff;
+      background-color: #24558d;
+      border: 1px solid #24558d;
+      text-decoration: none;
+      outline: none;
+      -webkit-box-shadow: none;
+              box-shadow: none; }
 
 /*# sourceMappingURL=frontend.css.map */

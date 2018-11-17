@@ -11,7 +11,7 @@
 	border-radius: 0px;
 	transition: all 0.2s;
 	font-weight: bold;
-	font-family: 'Archivo Narrow', sans-serif;
+	font-family: 'Archivo Narrow', Arial, sans-serif;
 	&:hover,
 	&:focus,
 	&:active {
@@ -27,6 +27,12 @@
 $blue: #24558d;
 $green: #41b1a0;
 $black: #000;
+
+html {
+	body {
+		font-size: 1.6rem;
+	}
+}
 
 .tcr-cat-modal{
     position: fixed;
@@ -79,6 +85,7 @@ $black: #000;
         margin-bottom: 15px;
 
         h3{
+        	font-family: 'Archivo Narrow', Arial, sans-serif;
             color: $blue;
             font-size: 25px;
             margin-bottom:0;
@@ -115,17 +122,7 @@ $black: #000;
         }
 
         .tcr-apply-to-adopt{
-            display: inline-block;
-            background-color: $green;
-            padding: 7px 15px;
-            border-radius: 10px;
-            color: #fff;
-            font-weight: 700;
-            font-size: 15px;
-
-            &:hover{
-                cursor: pointer;
-            }
+            @include button-style;
         }
 
     }
@@ -135,11 +132,11 @@ $black: #000;
 }
 
 .tcr-pet-form {
-	display: none;
+	// display: none;
 }
 
 form.wpcf7-form {
-	font-family: 'Lora', serif;
+	font-family: 'Lora', Georgia, serif;
 	p {
 		margin: 0px;
 		height: 0px;
@@ -298,28 +295,10 @@ form.wpcf7-form {
 	}
 	.wpcf7-field-groups {
 		.wpcf7-field-group-add  {
-			color: #fff;
-			background-color: #5cb85c;
-			border: 1px solid #5cb85c;
-			&:hover,
-			&:focus,
-			&:active {
-				color: #5cb85c;
-				background-color: #fff;
-				border: 1px solid #5cb85c;
-			}
+			@include button-style(#fff, #5cb85c, #5cb85c, #5cb85c, #fff, #5cb85c);
 		}
 		.wpcf7-field-group-remove  {
-			color: #fff;
-			background-color: #d9534f;
-			border: 1px solid #d9534f;
-			&:hover,
-			&:focus,
-			&:active {
-				color: #d9534f !important;
-				background-color: #fff !important;
-				border: 1px solid #d9534f !important;
-			}
+			@include button-style(#fff, #d9534f, #d9534f, #d9534f, #fff, #d9534f);
 		}
 	}
 }

@@ -120,7 +120,7 @@
                 <p class="breed"></p>
                 <p class="age"></p>
                 <p class="description"></p>
-                <span class="tcr-apply-to-adopt">View More</span>
+                <button class="tcr-apply-to-adopt">View More</button>
 
             </div>
 
