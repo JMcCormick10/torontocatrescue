@@ -17,7 +17,7 @@
             <label for="cat-breed">Breed:</label>
             <div>
                 <select id="cat-breed">
-                    <option value="">--Please choose an option--</option>
+                    <!-- <option value="">--Please choose an option--</option> -->
                     <?php
                         foreach($breeds as $breed) :
                         $breed_list = (array) $breed;
@@ -28,9 +28,9 @@
                 </select>
             </div>
         </div>
-         <div class="select-age">
-        <p>Age:</p>
-
+        <div class="select-age">
+        <!-- <p>Age:</p>
+                            
         <div>
             <input type="radio" id="Adult" name="Adult" value="Adult" checked>
             <label for="Adult">Adult</label>
@@ -44,12 +44,22 @@
         <div>
             <input type="radio" id="young" name="young" value="young">
             <label for="young">Young</label>
+        </div> -->
+        <label for="select-age">Age:</label>
+        <div>
+            <select id="select-age">
+                    <option value="Young">Young</option>
+                    <option value="Adult">Adult</option>
+                    <option value="Senior">Senior</option>
+            </select>
         </div>
+        
     </div>
 
 
     <div class="select-size">
-        <p>Size:</p>
+        <!-- <p>Size:</p>
+
 
         <div>
             <input type="radio" id="S" name="S" value="S" checked>
@@ -69,11 +79,20 @@
         <div>
             <input type="radio" id="XL" name="XL" value="XL">
             <label for="XL">Extra-Large</label>
+        </div> -->
+        <label for="select-size">Size:</label>
+        <div>
+            <select id="select-size">
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+            </select>
         </div>
+       
     </div>
 
     <div class="select-sex">
-        <p>Gender:</p>
+        <!-- <p>Gender:</p>
 
         <div>
             <input type="radio" id="yes" name="yes" value="yes" checked>
@@ -83,6 +102,13 @@
         <div>
             <input type="radio" id="no" name="no" value="no">
             <label for="no">Female</label>
+        </div> -->
+        <label for="select-sez">Size:</label>
+        <div>
+            <select id="select-sex">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
         </div>
     </div>
     <span class="tcr-apply-to-adopt submit-filter">View More</span>
