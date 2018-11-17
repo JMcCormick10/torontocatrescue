@@ -72,12 +72,6 @@
         </div>
     </div>
 
-    
-
-    <div class="select-breeds">
-        <!-- INFO COMING FROM PETFINDER -->
-    </div>
-
     <div class="select-sex">
         <p>Gender:</p>
     
@@ -91,6 +85,7 @@
             <label for="no">Female</label>
         </div>
     </div>
+    <span class="tcr-apply-to-adopt submit-filter">View More</span>
     </div>
 <!-- you got it boss -->    
     <h2>Cat's Available for Adoption</h2>

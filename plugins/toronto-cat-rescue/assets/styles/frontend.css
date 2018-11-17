@@ -1,77 +1,47 @@
-.tcr-cat-modal {
-  position: fixed;
-  display: none;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  background-color: rgba(0, 0, 0, 0.7); }
-  .tcr-cat-modal .tcr-cat-modal-content {
-    position: fixed;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #fff;
-    max-width: 600px;
-    width: 95%;
-    margin: 0 auto;
-    min-height: 300px;
-    border-radius: 10px; }
-    .tcr-cat-modal .tcr-cat-modal-content .tcr-exit-modal {
-      color: #000;
-      font-size: 50px;
-      right: 10px;
-      top: -15px;
-      position: absolute;
-      font-weight: 900; }
-      .tcr-cat-modal .tcr-cat-modal-content .tcr-exit-modal:hover {
-        cursor: pointer; }
+/*
+Error: Invalid CSS after "	}": expected "}", was ""
+        on line 275 of frontend.scss
 
-.tcr-cat-modal-show {
-  display: block; }
+270: 		width: 100% !important;
+271: 		canvas {
+272: 			width: 100%;
+273: 		}
+274: 	}
 
-.tcr-archive-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -15px; }
-  .tcr-archive-list .tcr-item {
-    width: 25%;
-    padding: 0 15px;
-    margin-bottom: 15px; }
-    .tcr-archive-list .tcr-item h3 {
-      color: #24558d;
-      font-size: 25px;
-      margin-bottom: 0; }
-    @media screen and (max-width: 992px) {
-      .tcr-archive-list .tcr-item {
-        width: 50%; } }
-    @media screen and (max-width: 560px) {
-      .tcr-archive-list .tcr-item {
-        width: 100%; } }
-    .tcr-archive-list .tcr-item .tcr-cat-image-container {
-      width: 100%;
-      height: 200px;
-      overflow: hidden; }
-      .tcr-archive-list .tcr-item .tcr-cat-image-container:hover {
-        cursor: pointer; }
-      .tcr-archive-list .tcr-item .tcr-cat-image-container .tcr-cat-image {
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        transition: 0.3s; }
-        .tcr-archive-list .tcr-item .tcr-cat-image-container .tcr-cat-image:hover {
-          transform: scale(1.1); }
-    .tcr-archive-list .tcr-item .tcr-apply-to-adopt {
-      display: inline-block;
-      background-color: #41b1a0;
-      padding: 7px 15px;
-      border-radius: 10px;
-      color: #fff;
-      font-weight: 700;
-      font-size: 15px; }
-      .tcr-archive-list .tcr-item .tcr-apply-to-adopt:hover {
-        cursor: pointer; }
-
-/*# sourceMappingURL=frontend.css.map */
+Backtrace:
+frontend.scss:275
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:1278:in `expected'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:1208:in `expected'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:1203:in `tok!'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:679:in `block'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:697:in `block_child'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:689:in `block_contents'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:678:in `block'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:670:in `ruleset'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:696:in `block_child'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:689:in `block_contents'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:137:in `stylesheet'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:41:in `parse'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/engine.rb:414:in `_to_tree'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `each'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:320:in `block in watch'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"	}\": expected \"}\", was \"\"\A         on line 275 of frontend.scss\A \A 270: 		width: 100% !important;\A 271: 		canvas {\A 272: 			width: 100%;\A 273: 		}\A 274: 	}"; }
