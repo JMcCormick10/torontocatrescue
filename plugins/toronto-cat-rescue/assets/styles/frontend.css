@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lora:400,700");
+@import url("https://fonts.googleapis.com/css?family=Archivo+Narrow:400,700|Lora:400,700");
 .tcr-cat-modal {
   position: fixed;
   display: none;
@@ -80,6 +80,31 @@
       font-size: 15px; }
       .tcr-archive-list .tcr-item .tcr-apply-to-adopt:hover {
         cursor: pointer; }
+
+.tcr-apply-button {
+  display: inline-block;
+  color: #fff;
+  background-color: #41b1a0;
+  border: 1px solid #41b1a0;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  text-decoration: none;
+  border-radius: 0px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  font-weight: bold;
+  font-family: 'Archivo Narrow', sans-serif; }
+  .tcr-apply-button:hover, .tcr-apply-button:focus, .tcr-apply-button:active {
+    color: #fff;
+    background-color: #24558d;
+    border: 1px solid #24558d;
+    text-decoration: none;
+    outline: none;
+    -webkit-box-shadow: none;
+            box-shadow: none; }
+
+.tcr-pet-form {
+  display: none; }
 
 form.wpcf7-form {
   font-family: 'Lora', serif; }
@@ -386,16 +411,17 @@ form.wpcf7-form {
   form.wpcf7-form input[type=button],
   form.wpcf7-form input[type=submit] {
     display: inline-block;
-    color: #fff !important;
-    background-color: #41b1a0 !important;
-    border: 1px solid #41b1a0 !important;
+    color: #fff;
+    background-color: #41b1a0;
+    border: 1px solid #41b1a0;
     text-transform: uppercase;
-    letter-spacing: 3.4px;
     padding: 8px 20px;
-    text-decoration: none !important;
+    text-decoration: none;
     border-radius: 0px;
     -webkit-transition: all 0.2s;
-    transition: all 0.2s; }
+    transition: all 0.2s;
+    font-weight: bold;
+    font-family: 'Archivo Narrow', sans-serif; }
     form.wpcf7-form button:hover, form.wpcf7-form button:focus, form.wpcf7-form button:active,
     form.wpcf7-form input[type=button]:hover,
     form.wpcf7-form input[type=button]:focus,
@@ -403,9 +429,9 @@ form.wpcf7-form {
     form.wpcf7-form input[type=submit]:hover,
     form.wpcf7-form input[type=submit]:focus,
     form.wpcf7-form input[type=submit]:active {
-      color: #fff !important;
-      background-color: #24558d !important;
-      border: 1px solid #24558d !important;
+      color: #fff;
+      background-color: #24558d;
+      border: 1px solid #24558d;
       text-decoration: none;
       outline: none;
       -webkit-box-shadow: none;
@@ -451,17 +477,17 @@ form.wpcf7-form {
     form.wpcf7-form .wpcf7-form-control-signature-wrap canvas {
       width: 100%; }
   form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-add {
-    color: #fff !important;
-    background-color: #5cb85c !important;
-    border: 1px solid #5cb85c !important; }
+    color: #fff;
+    background-color: #5cb85c;
+    border: 1px solid #5cb85c; }
     form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-add:hover, form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-add:focus, form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-add:active {
-      color: #5cb85c !important;
-      background-color: #fff !important;
-      border: 1px solid #5cb85c !important; }
+      color: #5cb85c;
+      background-color: #fff;
+      border: 1px solid #5cb85c; }
   form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-remove {
-    color: #fff !important;
-    background-color: #d9534f !important;
-    border: 1px solid #d9534f !important; }
+    color: #fff;
+    background-color: #d9534f;
+    border: 1px solid #d9534f; }
     form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-remove:hover, form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-remove:focus, form.wpcf7-form .wpcf7-field-groups .wpcf7-field-group-remove:active {
       color: #d9534f !important;
       background-color: #fff !important;

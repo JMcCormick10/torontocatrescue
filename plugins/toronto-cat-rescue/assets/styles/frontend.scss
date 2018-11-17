@@ -1,4 +1,28 @@
-@import url('https://fonts.googleapis.com/css?family=Lora:400,700');
+@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow:400,700|Lora:400,700');
+
+@mixin button-style($txt-color: #fff, $bg-color: $green, $brdr-color: $green, $txt-color-hover: #fff, $bg-color-hover: $blue, $brdr-color-hover: $blue) {
+	display: inline-block;
+	color: #fff;
+	background-color: $green;
+	border: 1px solid $green;
+	text-transform: uppercase;
+	padding: 8px 20px;
+	text-decoration: none;
+	border-radius: 0px;
+	transition: all 0.2s;
+	font-weight: bold;
+	font-family: 'Archivo Narrow', sans-serif;
+	&:hover,
+	&:focus,
+	&:active {
+		color: #fff;
+		background-color: $blue;
+		border: 1px solid $blue;
+		text-decoration: none;
+		outline: none;
+		box-shadow: none;
+	}
+}
 
 $blue: #24558d;
 $green: #41b1a0;
@@ -40,7 +64,6 @@ $black: #000;
 
         }
     }
-
 }
 .tcr-cat-modal-show{
     display: block;
@@ -107,6 +130,14 @@ $black: #000;
 
     }
 }
+.tcr-apply-button {
+	@include button-style;
+}
+
+.tcr-pet-form {
+	display: none;
+}
+
 form.wpcf7-form {
 	font-family: 'Lora', serif;
 	p {
@@ -212,26 +243,7 @@ form.wpcf7-form {
 	button,
 	input[type=button],
 	input[type=submit] {
-		display: inline-block;
-		color: #fff !important;
-		background-color: $green !important;
-		border: 1px solid $green !important;
-		text-transform: uppercase;
-		letter-spacing: 3.4px;
-		padding: 8px 20px;
-		text-decoration: none !important;
-		border-radius: 0px;
-		transition: all 0.2s;
-		&:hover,
-		&:focus,
-		&:active {
-			color: #fff !important;
-			background-color: $blue !important;
-			border: 1px solid $blue !important;
-			text-decoration: none;
-			outline: none;
-			box-shadow: none;
-		}
+		@include button-style;
 	}
 	.fill-container {
 		display: flex;
@@ -284,24 +296,23 @@ form.wpcf7-form {
 			width: 100%;
 		}
 	}
-
 	.wpcf7-field-groups {
 		.wpcf7-field-group-add  {
-			color: #fff !important;
-			background-color: #5cb85c !important;
-			border: 1px solid #5cb85c !important;
+			color: #fff;
+			background-color: #5cb85c;
+			border: 1px solid #5cb85c;
 			&:hover,
 			&:focus,
 			&:active {
-				color: #5cb85c !important;
-				background-color: #fff !important;
-				border: 1px solid #5cb85c !important;
+				color: #5cb85c;
+				background-color: #fff;
+				border: 1px solid #5cb85c;
 			}
 		}
 		.wpcf7-field-group-remove  {
-			color: #fff !important;
-			background-color: #d9534f !important;
-			border: 1px solid #d9534f !important;
+			color: #fff;
+			background-color: #d9534f;
+			border: 1px solid #d9534f;
 			&:hover,
 			&:focus,
 			&:active {
