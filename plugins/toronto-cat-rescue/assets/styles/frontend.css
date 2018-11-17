@@ -76,6 +76,8 @@
       font-size: 15px; }
       .tcr-archive-list .tcr-item .tcr-apply-to-adopt:hover {
         cursor: pointer; }
+    .tcr-archive-list .tcr-item .tcr-cat-data {
+      display: none; }
 
 .tcr-apply-button {
   display: inline-block;
@@ -387,5 +389,18 @@ form.wpcf7-form {
       color: #d9534f !important;
       background-color: #fff !important;
       border: 1px solid #d9534f !important; }
+
+/*------------------------------- *\
+			MODALS
+\*-------------------------------- */
+.tcr-modal-wrapper {
+  width: 95%;
+  margin: 0 auto; }
+
+.tcr-cat-info .tcr-cat-image {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center; }
 
 /*# sourceMappingURL=frontend.css.map */

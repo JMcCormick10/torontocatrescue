@@ -1,3 +1,9 @@
+<?php
+
+/* ----------------------------------------------- *\
+                THE FILTERS
+\* ----------------------------------------------- */
+?>
 <div id="tcr-archive-container">
     <div class="filters">
         <!-- 1.) GRAB BREED DATA -->
@@ -86,8 +92,14 @@
         </div>
     </div>
     <span class="tcr-apply-to-adopt submit-filter">View More</span>
-    </div>
-<!-- you got it boss -->
+</div>
+
+
+
+<?php
+/* ----------------------------------------------- *\
+                THE LIST OF CATS
+\* ----------------------------------------------- */?>
     <h2>Cat's Available for Adoption</h2>
     <div class="tcr-archive-list">
 
@@ -111,7 +123,7 @@
 
             ?>
 
-            <div class="tcr-item">
+            <div class="tcr-item" data>
                 <h3><?=$name?></h3>
                 <div class="tcr-cat-image-container">
                     <div class="tcr-cat-image" style="background-image:url('<?=$photo_url;?>');"></div>
@@ -121,24 +133,40 @@
                 <p class="age"></p>
                 <p class="description"></p>
                 <span class="tcr-apply-to-adopt">View More</span>
+                <div class="tcr-cat-data">
+                    <h2><?=$name;?></h2>
+                    <div class="tcr-cat-image" style="background-image:url('<?=$photo_url;?>');"></div>
+
+                </div>
 
             </div>
 
+            
         <?php endforeach;?>
     </div>
 </div>
+
+
+
+<?php
+/* ----------------------------------------------- *\
+                THE MODALS
+\* ----------------------------------------------- */?>
 <div class="tcr-cat-modal">
+
     <div class="tcr-cat-modal-content">
+        <button class="tcr-apply-button">Apply to Adopt </button>
         <span class="tcr-exit-modal">&times;</span>
 
-        <div class="tcr-cat-info">
+        <div class="tcr-modal-wrapper">
+            <div class="tcr-cat-info">
 
-        </div>
-        <div class="tcr-form-container">
-            <!-- SIERRA. PUT YOUR FORM HERE DUDE -->
-            <button class="tcr-apply-button">Apply to Adopt </button>
-            <div class="tcr-pet-form">
-                <?php  echo do_shortcode('[contact-form-7 id="8" title="Adoption Form"]'); ?>
+            </div>
+            <div class="tcr-form-container">
+                <!-- SIERRA. PUT YOUR FORM HERE DUDE -->
+                <div class="tcr-pet-form">
+                    <?php  echo do_shortcode('[contact-form-7 id="8" title="Adoption Form"]'); ?>
+                </div>
             </div>
         </div>
     </div>
