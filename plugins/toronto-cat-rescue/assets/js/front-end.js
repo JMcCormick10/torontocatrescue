@@ -6,40 +6,40 @@ jQuery(document).ready(function($) {
         var cat_data = $(this).siblings('.tcr-cat-data');
         populateModalData($(this).data('cat'));
         $('.tcr-cat-modal .carousel').slick({
-        	variableWidth: true,
-        	centerMode: true
-			// slidesToShow: 1,
-			// slidesToScroll: 1,
-			// dots: true,
-			// appendDots : $('.slick-nav'),
-			// autoplay: true,
-			// autoplaySpeed: 3500,
-			// speed: 700,
-	   	});
-	   	$('.tcr-cat-modal .carousel .slick-prev').html('<span class="fa fa-angle-left"></span>');
-		$('.tcr-cat-modal .carousel .slick-next').html('<span class="fa fa-angle-right"></span>');
-	   	$('.tcr-cat-modal .carousel').on('breakpoint', function(event, slick, currentSlide, nextSlide) {
-			$('.tcr-cat-modal .carousel .slick-prev').html('<span class="fa fa-angle-left"></span>');
-			$('.tcr-cat-modal .carousel .slick-next').html('<span class="fa fa-angle-right"></span>');
-		});
+            variableWidth: true,
+            centerMode: true
+            // slidesToShow: 1,
+            // slidesToScroll: 1,
+            // dots: true,
+            // appendDots : $('.slick-nav'),
+            // autoplay: true,
+            // autoplaySpeed: 3500,
+            // speed: 700,
+        });
+        $('.tcr-cat-modal .carousel .slick-prev').html('<span class="fa fa-angle-left"></span>');
+        $('.tcr-cat-modal .carousel .slick-next').html('<span class="fa fa-angle-right"></span>');
+        $('.tcr-cat-modal .carousel').on('breakpoint', function(event, slick, currentSlide, nextSlide) {
+            $('.tcr-cat-modal .carousel .slick-prev').html('<span class="fa fa-angle-left"></span>');
+            $('.tcr-cat-modal .carousel .slick-next').html('<span class="fa fa-angle-right"></span>');
+        });
     });
-    $('.tcr-exit-modal').click(function(){
+    $('.tcr-exit-modal').click(function() {
         $('.tcr-cat-modal').removeClass('tcr-cat-modal-show');
         $('body').removeClass('no-overflow');
         $('.tcr-cat-modal .carousel').slick('unslick');
     });
 
-    $('.tcr-view-info').click(function(){
+    $('.tcr-view-info').click(function() {
         $('.tcr-cat-info').show();
         $('.tcr-form-container').hide();
     });
-    $('.tcr-apply-button').click(function(){
+    $('.tcr-apply-button').click(function() {
         $('.tcr-form-container').show();
         $('.tcr-cat-info').hide();
     });
 
-    function populateModalData(cat_data){
-        $('.tcr-cat-info').html($('#'+cat_data).html());
+    function populateModalData(cat_data) {
+        $('.tcr-cat-info').html($('#' + cat_data).html());
     }
 
     $(window).click(function(event) {
@@ -48,12 +48,11 @@ jQuery(document).ready(function($) {
         }
     })
 
-    $('.tcr-select-option').each(function(){
-    	console.log($(this).prev().text());
-    	$(this).select2({
-    		placeholder: 'Select '+$(this).prev().text(),
-    		width: 'resolve'
-    	});
+    $('.tcr-select-option').each(function() {
+        $(this).select2({
+            placeholder: 'Select ' + $(this).prev().text(),
+            width: 'resolve'
+        });
     })
 
     // flatten object by concatting values
@@ -61,14 +60,14 @@ jQuery(document).ready(function($) {
         // console.log(obj);
         var value = '';
         for (var prop in obj) {
-            value += '.'+obj[prop];
+            value += '.' + obj[prop];
         }
         return value;
     }
 
     // init Isotope
     var $container = $('.tcr-archive-list').isotope({
-        itemSelector: '.tcr-item'
+        itemSelector: '.tcr-item',
     });
 
     // store filter for each group
@@ -77,14 +76,30 @@ jQuery(document).ready(function($) {
         var select = $(event.currentTarget);
         // get group key
         var filterGroup = select.attr('data-filter-group');
-        // set filter for group
-        filters[filterGroup] = select.val();
-        // combine filters
-        var filterValue = concatValues(filters);
-        // set filter for Isotope
-        console.log(filterValue);
-        $container.isotope({ filter: filterValue });
+        if (select.val() != null) {
+        	// set filter for group
+	        filters[filterGroup] = select.val();
+	        // combine filters
+	        var filterValue = concatValues(filters);
+	        // set filter for Isotope
+	        $container.isotope({ filter: filterValue });
+	        console.log($container.data('isotope').filteredItems.length);
+	        console.log(filterValue);
+	        if ($container.data('isotope').filteredItems.length <= 0) {
+	            $('.tcr-no-cats').fadeIn();
+	        } else {
+	            $('.tcr-no-cats').fadeOut();
+	        }
+        }
     });
 
-
+    $('.tcr-clear-filter').click(function(){
+    	$('.tcr-select-option').each(function() {
+	        $(this).val([]).trigger('change');
+	    })
+	    $container.isotope({
+	        filter: '*'
+	    });
+    	filters = {};
+    })
 });

@@ -57,6 +57,10 @@
                 <option value="sex-F" data-filter-value="sex-F">Female</option>
             </select>
         </div>
+
+        <div class="tcr-filter clear-filter">
+            <button class="tcr-clear-filter">Clear</button>
+        </div>
     </div>
     <!-- you got it boss -->
     <h2>Cat's Available for Adoption</h2>
@@ -94,8 +98,6 @@
             $photos =  $pet->media->photos->photo;
             foreach ($photos as $photo){
                 $photo = (array) $photo;
-
-
                 if ($photo[$gross_at.'size'] == 'x'){
                     $feature_photo = $photo;
                     $carousel[] = $photo[$gross.'t'];
@@ -136,21 +138,23 @@
                         <div class="tcr-cat-modal-info">
                             <h2><strong>Name: </strong><?=$name;?></h2>
                             <div class="tcr-modal-info-section">
-                                <p><strong>Gender: </strong><?=($sex == 'sex-F' ? 'Female' : 'Male');?></p>
-                                <p><strong>Breeds: </strong><?=$breed_list;?></p>
-                                <p><strong>Age: </strong><?=$age;?></p>
+                                <p><strong>Gender: <br /></strong><?=($sex == 'sex-F' ? 'Female' : 'Male');?></p>
+                                <p><strong>Breeds: <br /></strong><?=$breed_list;?></p>
+                                <p><strong>Age: <br /></strong><?=$age;?></p>
                             </div>
                         </div>
                         <div class="tcr-cat-modal-desc">
-                            <p><strong>Description: </strong><?=$pet_description;?></p>
+                            <p><strong>Description: <br /></strong><?=html_entity_decode($pet_description);?></p>
                         </div>
                     </div>
                 </div>
             </div>
-
-
         <?php endforeach;?>
     </div>
+</div>
+
+<div class="tcr-no-cats">
+    <p><strong>We couldn't find your purrr-fect cat.</strong><br />Please update your search purrr-ametres.</p>
 </div>
 
 

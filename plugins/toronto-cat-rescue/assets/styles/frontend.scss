@@ -6,9 +6,10 @@
 	background-color: $green;
 	border: 1px solid $green;
 	text-transform: uppercase;
-	padding: 8px 20px;
+	line-height: 28px;
+	padding: 10px 20px;
 	text-decoration: none;
-	border-radius: 0px;
+    border-radius: 4px;
 	transition: all 0.2s;
 	font-weight: bold;
 	font-family: 'Archivo Narrow', Arial, sans-serif;
@@ -40,6 +41,7 @@ html {
 .tcr-filter-container {
 	display: flex;
 	flex-wrap: wrap;
+	align-items: flex-end;
 	border-bottom: 1px solid rgba(#000, 0.2);
 	padding-bottom: 25px;
 	margin-bottom: 25px;
@@ -50,12 +52,12 @@ html {
 			display: block;
 		}
 		select {
-			min-width: 100px;
+			min-width: 200px;
 		}
 	}
 }
 
-.tcr-cat-modal{
+.tcr-cat-modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -66,7 +68,6 @@ html {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-
     &.tcr-cat-modal-show {
 		display: block;
     }
@@ -78,10 +79,13 @@ html {
 	    padding: 20px;
 	    border: 1px solid #888;
 	    width: 80%; /* Could be more or less, depending on screen size */
+	    max-width: 1200px;
 	    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 	    animation-name: animatetop;
 	    animation-duration: 0.5s;
-
+		@media screen and (max-width: 992px){
+            width: 95%;
+        }
 		.tcr-exit-modal {
 			color: #aaa;
 		    float: right;
@@ -96,9 +100,15 @@ html {
 		}
 		.tcr-cat-modal-info {
 			width: 30%;
+			@media screen and (max-width: 992px){
+	            width: 100%;
+	        }
 		}
 		.tcr-cat-modal-desc {
 			width: 70%;
+			@media screen and (max-width: 992px){
+	            width: 100%;
+	        }
 		}
     }
 }
@@ -106,6 +116,12 @@ html {
 @keyframes animatetop {
     from {top: 100px; opacity: 0}
     to {top: 0; opacity: 1}
+}
+
+.tcr-no-cats {
+	font-size: 2.5rem;
+	text-align: center;
+	padding: 100px 15px;
 }
 
 .tcr-archive-list {
@@ -278,7 +294,7 @@ html {
 		}
 	}
 }
-
+.tcr-filter-container,
 form.wpcf7-form {
 	font-family: 'Lora', Georgia, serif;
 	p {
@@ -331,7 +347,8 @@ form.wpcf7-form {
 	input[type=email]
 	input[type=number],
 	textarea,
-	select,
+	select,,
+	.select2-selection,
 	.age-gate-input,
 	.wpcf7-text,
 	.wpcf7-date,
@@ -346,10 +363,12 @@ form.wpcf7-form {
 		font-style: normal;
 		font-stretch: normal;
 		letter-spacing: 1px;
+		line-height: 28px;
 		color: #000;
 		background-color: #fff;
 		border: 1px solid #000;
 		margin-bottom: 5px;
+	    border-radius: 4px;
 		&:placeholder-shown,
 		&::placeholder,
 		&::-webkit-input-placeholder,
@@ -371,6 +390,9 @@ form.wpcf7-form {
 				border: 1px solid $blue;
 			}
 		}
+	}
+	.select2-selection {
+		margin-bottom: 0px;
 	}
 	.wpcf7-not-valid-tip {
 		margin-bottom: 12px;
@@ -443,6 +465,7 @@ form.wpcf7-form {
 		}
 		.wpcf7-field-group-remove  {
 			@include button-style(#fff, #d9534f, #d9534f, #d9534f, #fff, #d9534f);
+			margin-right: 5px;
 		}
 	}
 }
@@ -515,4 +538,8 @@ form.wpcf7-form {
 \*-------------------------------- */
 .pl-0{
 	padding-left: 0 !important;
+}
+
+button.tcr-clear-filter {
+	@include button-style(#fff, $blue, $blue, #fff, $green, $green);
 }
