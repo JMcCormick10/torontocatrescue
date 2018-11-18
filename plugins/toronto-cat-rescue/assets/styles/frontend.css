@@ -106,7 +106,6 @@ html body {
           background-size: cover;
           background-position: center;
           transition: 0.3s; }
-<<<<<<< HEAD
       .tcr-archive-list .tcr-item .tcr-cat .tcr-cat-body {
         padding: 10px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
@@ -116,32 +115,13 @@ html body {
         padding: 10px 25px; }
         .tcr-archive-list .tcr-item .tcr-cat .tcr-cat-footer .tcr-apply-to-adopt {
           display: inline-block;
-=======
-          .tcr-archive-list .tcr-item .tcr-cat .tcr-cat-image-container .tcr-cat-image:hover {
-            transform: scale(1.1); }
-      .tcr-archive-list .tcr-item .tcr-cat .tcr-apply-to-adopt {
-        display: inline-block;
-        color: #fff;
-        background-color: #41b1a0;
-        border: 1px solid #41b1a0;
-        text-transform: uppercase;
-        padding: 8px 20px;
-        text-decoration: none;
-        border-radius: 0px;
-        transition: all 0.2s;
-        font-weight: bold;
-        font-family: 'Archivo Narrow', Arial, sans-serif; }
-        .tcr-archive-list .tcr-item .tcr-cat .tcr-apply-to-adopt:hover, .tcr-archive-list .tcr-item .tcr-cat .tcr-apply-to-adopt:focus, .tcr-archive-list .tcr-item .tcr-cat .tcr-apply-to-adopt:active {
->>>>>>> a52de16bc525342d698f3fbc50b99cdfbe4aa827
           color: #fff;
           background-color: #41b1a0;
           border: 1px solid #41b1a0;
           text-transform: uppercase;
           padding: 8px 20px;
           text-decoration: none;
-<<<<<<< HEAD
           border-radius: 0px;
-          -webkit-transition: all 0.2s;
           transition: all 0.2s;
           font-weight: bold;
           font-family: 'Archivo Narrow', Arial, sans-serif;
@@ -153,12 +133,7 @@ html body {
             border: 1px solid #24558d;
             text-decoration: none;
             outline: none;
-            -webkit-box-shadow: none;
-                    box-shadow: none; }
-=======
-          outline: none;
-          box-shadow: none; }
->>>>>>> a52de16bc525342d698f3fbc50b99cdfbe4aa827
+            box-shadow: none; }
 
 .tcr-apply-button {
   display: inline-block;
@@ -206,29 +181,16 @@ html body {
     .carousel {
       padding: 15px 0px 25px 0px; } }
   .carousel .slick-list .slick-track {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center; }
+    align-items: center;
+    justify-content: center; }
     .carousel .slick-list .slick-track .slick-slide {
       margin-right: 5px;
       margin-left: 5px;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
+      align-items: center;
+      justify-content: center;
       opacity: 0.5;
-      -webkit-transition: all 0.2s;
       transition: all 0.2s; }
       .carousel .slick-list .slick-track .slick-slide.slick-current {
         opacity: 1; }
@@ -251,7 +213,6 @@ html body {
     width: auto;
     z-index: 300;
     padding: 10px;
-    -webkit-transition: all 0.2s;
     transition: all 0.2s;
     top: 50%; }
     .carousel .slick-prev:hover, .carousel .slick-prev:focus,
@@ -279,7 +240,6 @@ html body {
       background-color: #41b1a0;
       opacity: 0.5;
       border-radius: 50%;
-      -webkit-transition: all 0.2s;
       transition: all 0.2s; }
       .carousel .slick-dots li button:before {
         content: '';
