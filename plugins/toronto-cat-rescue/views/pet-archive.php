@@ -107,6 +107,10 @@
             //description
             $description_array = (array) $pet->description;
             $pet_description = $description_array[$gross.'t'];
+            // $string = preg_replace('/[\x00-\x1F\x7F]/u', '', $string)
+            $pet_description = preg_replace('/[[:^print:]]/', '', $pet_description);
+            // $pet_description = str_replace('', "'", $pet_description);
+
             ?>
 
             <div class="tcr-item <?php echo $age.' '.$size.' '.$sex.' '.$breed_list; ?>">
@@ -116,9 +120,8 @@
                         <div class="tcr-cat-image" style="background-image:url('<?=$photo_url;?>');"></div>
                     </div>
                     <div class="tcr-cat-body">
-                        <p class="breed"><strong>Breed: </strong><?=$breed_list;?></p>
-                        <p class="age"><strong>Age: </strong><?=$age;?></p>
-                        <p class="sex"><strong>Gender: </strong><?=($sex == 'sex-F' ? 'Female' : 'Male');?></p>
+                        <p><?=$breed_list;?></p>
+                        <p><strong><?=$age;?>&nbsp;&nbsp;&bull;&nbsp;&nbsp;<?=($sex == 'sex-F' ? 'Female' : 'Male');?>&nbsp;&nbsp;&bull;&nbsp;&nbsp;<?=($size == 'size-S' ? 'Small' : ($size == 'size-M' ? 'Medium' : 'Large'))?></strong></p>
                     </div>
                     <div class="tcr-cat-footer">
                         <button data-cat="cat-<?php echo $index; ?>" class="tcr-apply-to-adopt">View More</button>
@@ -134,17 +137,15 @@
                             </div>
                         <?php endif ?>
                     </div>
-                    <div class="tcr-data-row">
+                    <div class="tcr-data-row no-gutters">
                         <div class="tcr-cat-modal-info">
-                            <h2><strong>Name: </strong><?=$name;?></h2>
-                            <div class="tcr-modal-info-section">
-                                <p><strong>Gender: <br /></strong><?=($sex == 'sex-F' ? 'Female' : 'Male');?></p>
-                                <p><strong>Breeds: <br /></strong><?=$breed_list;?></p>
-                                <p><strong>Age: <br /></strong><?=$age;?></p>
-                            </div>
+                            <h2><?=$name;?></h2>
+                            <p><strong>Age: </strong><?=$age;?></p>
+                            <p><strong>Gender: </strong><?=($sex == 'sex-F' ? 'Female' : 'Male');?></p>
+                            <p><strong>Size: </strong><?=($size == 'size-S' ? 'Small' : ($size == 'size-M' ? 'Medium' : 'Large'))?></p>
                         </div>
                         <div class="tcr-cat-modal-desc">
-                            <p><strong>Description: <br /></strong><?=html_entity_decode($pet_description);?></p>
+                            <p><strong>About <?=$name;?> <br /></strong><?=html_entity_decode($pet_description);?></p>
                         </div>
                     </div>
                 </div>
@@ -166,20 +167,18 @@
 <div class="tcr-cat-modal">
 
     <div class="tcr-cat-modal-content">
-        <span class="tcr-exit-modal">&times;</span>
-
-        <div class="tcr-modal-button-container">
-            <button class="tcr-view-info">View Info </button>
-            <button class="tcr-apply-button">Apply to Adopt </button>
+        <div class="tcr-modal-header">
+            <button class="tcr-view-info active">View Info</button>
+            <button class="tcr-apply-button">Apply to Adopt</button>
+            <span class="tcr-exit-modal">&times;</span>
         </div>
 
 
-        <div class="tcr-modal-wrapper">
+        <div class="tcr-modal-body">
             <div class="tcr-cat-info">
 
             </div>
             <div class="tcr-form-container">
-                <!-- SIERRA. PUT YOUR FORM HERE DUDE -->
                 <div class="tcr-pet-form">
                     <?php  echo do_shortcode('[contact-form-7 id="'.$form_id.'" title="Adoption Form"]'); ?>
                 </div>

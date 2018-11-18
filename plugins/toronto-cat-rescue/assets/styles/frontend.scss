@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Archivo+Narrow:400,700|Lora:400,700');
 
-@mixin button-style($txt-color: #fff, $bg-color: $green, $brdr-color: $green, $txt-color-hover: #fff, $bg-color-hover: $blue, $brdr-color-hover: $blue) {
+@mixin btn-style($txt-color: #fff, $bg-color: $green, $brdr-color: $green, $txt-color-hover: #fff, $bg-color-hover: $blue, $brdr-color-hover: $blue) {
 	display: inline-block;
 	color: #fff;
 	background-color: $green;
@@ -15,7 +15,8 @@
 	font-family: 'Archivo Narrow', Arial, sans-serif;
 	&:hover,
 	&:focus,
-	&:active {
+	&:active,
+	&.active {
 		color: #fff;
 		background-color: $blue;
 		border: 1px solid $blue;
@@ -31,13 +32,16 @@ $black: #000;
 
 html {
 	body {
-		font-size: 1.6rem;
+		font-size: 1.4rem;
 		&.no-overflow {
 			overflow: hidden;
 		}
 	}
 }
 
+/*-------------------------------*\
+			  FILTERS
+\*--------------------------------*/
 .tcr-filter-container {
 	display: flex;
 	flex-wrap: wrap;
@@ -52,11 +56,14 @@ html {
 			display: block;
 		}
 		select {
-			min-width: 200px;
+			min-width: 150px;
 		}
 	}
 }
 
+/*-------------------------------*\
+			  MODAL
+\*--------------------------------*/
 .tcr-cat-modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -71,13 +78,10 @@ html {
     &.tcr-cat-modal-show {
 		display: block;
     }
-
-    .tcr-cat-modal-content{
+    .tcr-cat-modal-content {
     	position: relative;
 		background-color: #fefefe;
 	    margin: 15px auto; /* 15% from the top and centered */
-	    padding: 20px;
-	    border: 1px solid #888;
 	    width: 80%; /* Could be more or less, depending on screen size */
 	    max-width: 1200px;
 	    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
@@ -86,33 +90,53 @@ html {
 		@media screen and (max-width: 992px){
             width: 95%;
         }
-		.tcr-exit-modal {
-			color: #aaa;
-		    float: right;
-		    font-size: 28px;
-		    font-weight: bold;
-		    &:hover,
-			&:focus {
-			    color: black;
-			    text-decoration: none;
-			    cursor: pointer;
+        .tcr-modal-header {
+        	padding: 15px;
+        	border-bottom: 1px solid rgba(#000, 0.1);
+        	button {
+				line-height: normal;
+				padding: 8px 12px;
 			}
-		}
-		.tcr-cat-modal-info {
-			width: 30%;
-			@media screen and (max-width: 992px){
-	            width: 100%;
-	        }
-		}
-		.tcr-cat-modal-desc {
-			width: 70%;
-			@media screen and (max-width: 992px){
-	            width: 100%;
-	        }
+        	.tcr-exit-modal {
+				color: #aaa;
+			    float: right;
+			    font-size: 28px;
+			    padding: 0px 5px;
+			    font-weight: bold;
+			    &:hover,
+				&:focus {
+				    color: black;
+				    text-decoration: none;
+				    cursor: pointer;
+				}
+			}
+        }
+		.tcr-modal-body {
+			 padding: 20px 20px 30px 20px;
+			 .tcr-cat-modal-info {
+				width: 30%;
+				// text-align: right;
+				// padding-right: 20px;
+				@media screen and (max-width: 992px){
+		            width: 100%;
+		            margin-bottom: 15px;
+		        }
+		        p {
+		        	margin: 0px;
+		        }
+			}
+			.tcr-cat-modal-desc {
+				width: 70%;
+				@media screen and (max-width: 992px){
+		            width: 100%;
+		        }
+		        p {
+		        	margin: 0px;
+		        }
+			}
 		}
     }
 }
-
 @keyframes animatetop {
     from {top: 100px; opacity: 0}
     to {top: 0; opacity: 1}
@@ -145,9 +169,10 @@ html {
 	        h3{
 	        	font-family: 'Archivo Narrow', Arial, sans-serif;
 	            color: $blue;
-	            font-size: 25px;
+	            font-size: 20px;
 	            margin: 0px;
 	            padding: 10px;
+	            line-height: 0.9;
 	        }
 	        .tcr-cat-image-container{
 	            width: 100%;
@@ -164,6 +189,7 @@ html {
 	        .tcr-cat-body {
 	        	padding: 10px;
 	        	border-bottom: 1px solid rgba(#000, 0.1);
+	        	text-align: center;
 	        	p {
 	        		margin: 0px;
 	        	}
@@ -171,39 +197,35 @@ html {
 	        .tcr-cat-footer {
 	        	padding: 10px 25px;
 				.tcr-apply-to-adopt{
-		            @include button-style;
+		            @include btn-style;
 		            display: block;
 		            width: 100%;
+		            line-height: normal;
+					padding: 8px 12px;
 		        }
 	        }
 	    }
 	}
 }
-.tcr-apply-button {
-	@include button-style;
-}
-.tcr-view-info{
-	@include button-style;
-
+.tcr-apply-button,
+.tcr-view-info {
+	@include btn-style;
+	border-radius: 0px;
 }
 
+/*-------------------------------*\
+			 CAROUSEL
+\*--------------------------------*/
 .carousel {
-	padding: 30px 10px 40px 10px;
-	@media only screen and (max-width: 767px) {
-		padding: 15px 0px 25px 0px;
-	}
-	// max-height: 90vh;
+	padding: 20px 0px 35px 0px;
 	.slick-list {
-		// max-height: 90vh;
 		.slick-track {
-			// max-height: 90vh;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			.slick-slide {
 				margin-right: 5px;
 				margin-left: 5px;
-				// max-height: 90vh;
 				display: flex;
 				align-items: center;
 				justify-content: center;
@@ -214,7 +236,7 @@ html {
 				}
 				& > div {
 					width: 100%;
-					// max-height: 90vh;
+					height: 100%;
 					overflow: hidden;
 					img {
 						margin: 0 auto;
@@ -241,20 +263,17 @@ html {
 		top: 50%;
 		&:hover,
 		&:focus {
-			color: #000;
+			color: $blue;
 		}
 		&:before {
 			content: '' !important;
 		}
 	}
 	.slick-prev {
-		left: -30px;
-		@media only screen and (max-width: 767px) {
-			left: -32px;
-		}
+		left: 0px;
 	}
 	.slick-next {
-		right: -30px;
+		right: 0px;
 	}
 	.slick-dots {
 		bottom: -10px;
@@ -294,10 +313,18 @@ html {
 		}
 	}
 }
+
+/*-------------------------------*\
+			   FORMS
+\*--------------------------------*/
 .tcr-filter-container,
 form.wpcf7-form {
 	font-family: 'Lora', Georgia, serif;
 	line-height: 1.5;
+	.required {
+		font-weight: bold;
+		color: #d9534f;
+	}
 	p {
 		margin: 0px;
 		height: 0px;
@@ -380,8 +407,6 @@ form.wpcf7-form {
 		font-weight: bold;
 		font-style: normal;
 		font-stretch: normal;
-		letter-spacing: 1px;
-		line-height: 28px;
 		color: #000;
 		background-color: #fff;
 		border: 1px solid #000;
@@ -411,6 +436,7 @@ form.wpcf7-form {
 	}
 	.select2-selection {
 		margin-bottom: 0px;
+		padding: 8px 12px;
 	}
 	.wpcf7-not-valid-tip {
 		margin-bottom: 12px;
@@ -424,7 +450,7 @@ form.wpcf7-form {
 	button,
 	input[type=button],
 	input[type=submit] {
-		@include button-style;
+		@include btn-style;
 	}
 	.fill-container {
 		display: flex;
@@ -507,77 +533,61 @@ form.wpcf7-form {
 	}
 	.wpcf7-field-groups {
 		.wpcf7-field-group-add  {
-			@include button-style(#fff, #5cb85c, #5cb85c, #5cb85c, #fff, #5cb85c);
+			@include btn-style(#fff, #5cb85c, #5cb85c, #5cb85c, #fff, #5cb85c);
 		}
 		.wpcf7-field-group-remove  {
-			@include button-style(#fff, #d9534f, #d9534f, #d9534f, #fff, #d9534f);
+			@include btn-style(#fff, #d9534f, #d9534f, #d9534f, #fff, #d9534f);
 			margin-right: 5px;
 		}
 	}
 }
 
-/*------------------------------- *\
-			MODALS
-\*-------------------------------- */
-.tcr-modal-wrapper{
-	width: 95%;
-	margin: 0 auto;
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+	line-height: normal;
 }
-.tcr-modal-button-container{
-	margin-bottom: 25px;
-	button{
-		margin-bottom: 10px;
+
+.tcr-data-row {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -15px;
+	&.no-gutters {
+		margin: 0px;
 	}
-}
-.tcr-cat-info{
-
-	.tcr-data-row{
-		display: flex;
-		flex-wrap: wrap;
-		margin: 0 -15px;
-
-		.tcr-data-col{
-			width: 50%;
-			padding: 0 15px;
-
-			@media screen and (max-width: 767px){
-				width: 100%;
-				margin-bottom: 20px;
-
-				.tcr-cat-image{
-					max-height: 250px;
-				}
-			}
-
-			@media screen and (max-width: 500px){
-
-				.tcr-cat-image{
-					max-height: 150px;
-				}
-			}
+	.tcr-data-col {
+		width: 50%;
+		padding: 0 15px;
+		@media screen and (max-width: 767px){
+			width: 100%;
+			margin-bottom: 20px;
 		}
 	}
-	h2{
+}
+
+.tcr-cat-info {
+	h2 {
 		margin: 0;
 	}
-	.tcr-cat-image{
-		width: 100%;
-		height: 300px;
-		background-size: cover;
-		background-position: center;
-		max-width: 500px;
+}
+
+.tcr-cat-image {
+	width: 100%;
+	height: 300px;
+	background-size: cover;
+	background-position: center;
+	max-width: 500px;
+	position: relative;
+	@media screen and (max-width: 767px){
+		max-height: 250px;
 	}
-
+	@media screen and (max-width: 500px){
+		max-height: 150px;
+	}
 }
 
-.tcr-form-container{
+.tcr-form-container,
+.tcr-cat-data {
 	display: none;
 }
-
-.tcr-cat-data{
-	display: none;
-}
-
 
 /*------------------------------- *\
 			UTILITY
@@ -586,6 +596,12 @@ form.wpcf7-form {
 	padding-left: 0 !important;
 }
 
+.tcr-align-right {
+	text-align: right;
+}
+
 button.tcr-clear-filter {
-	@include button-style(#fff, $blue, $blue, #fff, $green, $green);
+	@include btn-style(#fff, $blue, $blue, #fff, $green, $green);
+	padding: 8px 12px;
+	line-height: normal;
 }
