@@ -5,7 +5,7 @@ class petFinder{
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-          CURLOPT_URL => "http://api.petfinder.com/shelter.getPets?key=8b940518a403583219425b9bb8b63bed&id=ON29&format=json",
+          CURLOPT_URL => "http://api.petfinder.com/shelter.getPets?key=8b940518a403583219425b9bb8b63bed&id=ON29&count=1000&output=full",
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => "",
           CURLOPT_MAXREDIRS => 10,
