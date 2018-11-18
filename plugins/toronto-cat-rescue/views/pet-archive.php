@@ -24,6 +24,30 @@
                 ?>
                     <option value="<?= $breed_list ?>" data-filter-value="<?= $breed_list ?>"><?= $breed_list ?></option>
                 <?php endforeach;?>
+        </div>
+        <div class="select-age">
+        <!-- <p>Age:</p>
+
+        <div>
+            <input type="radio" id="Adult" name="Adult" value="Adult" checked>
+            <label for="Adult">Adult</label>
+        </div>
+
+        <div>
+            <input type="radio" id="Senior" name="Senior" value="Senior">
+            <label for="Senior">Senior</label>
+        </div>
+
+        <div>
+            <input type="radio" id="young" name="young" value="young">
+            <label for="young">Young</label>
+        </div> -->
+        <label for="select-age">Age:</label>
+        <div>
+            <select id="select-age">
+                    <option value="Young">Young</option>
+                    <option value="Adult">Adult</option>
+                    <option value="Senior">Senior</option>
             </select>
         </div>
 
