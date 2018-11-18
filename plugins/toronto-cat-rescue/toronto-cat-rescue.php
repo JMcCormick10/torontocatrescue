@@ -1,4 +1,4 @@
- <?php
+<?php
 /*
 Plugin Name: Toronto Cat Rescue
 Plugin URI: none
@@ -95,5 +95,3 @@ function tcr_load_frontend_resources() {
     wp_enqueue_script('trc-front-end-js', plugins_url('/assets/js/front-end.js', __FILE__));
 }
 add_action('wp_enqueue_scripts', 'tcr_load_frontend_resources');
-
-
