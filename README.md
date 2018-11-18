@@ -11,4 +11,4 @@
 # Other Configurations
 * [Adoption Form](https://github.com/JMcCormick10/torontocatrescue/blob/master/adoption-form.txt)
 
-![Toronto Cat Rescue Adoption Page](https://imgur.com/hKb7MKA "Toronto Cat Rescue Adoption Page")
+![Toronto Cat Rescue Adoption Page](https://i.imgur.com/hKb7MKA.png "Toronto Cat Rescue Adoption Page")
