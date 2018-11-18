@@ -37,6 +37,20 @@ html {
 	}
 }
 
+.tcr-filter-container {
+	display: flex;
+	// justify-content: space-around;
+	border-bottom: 1px solid rgba(#000, 0.2);
+	padding-bottom: 25px;
+	margin-bottom: 25px;
+	.tcr-filter {
+		padding-right: 10px;
+		label {
+			display: block;
+		}
+	}
+}
+
 .tcr-cat-modal{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */

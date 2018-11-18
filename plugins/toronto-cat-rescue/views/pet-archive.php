@@ -1,5 +1,5 @@
 <div id="tcr-archive-container">
-    <div class="filters">
+    <div class="tcr-filter-container">
         <!-- 1.) GRAB BREED DATA -->
         <?php
         $gross = '$';
@@ -13,105 +13,47 @@
             //echo $breed_list;
         }
         ?>
-        <div class="select-breed">
+        <div class="tcr-filter select-breed">
             <label for="cat-breed">Breed:</label>
-            <div>
-                <select id="cat-breed">
-                    <!-- <option value="">--Please choose an option--</option> -->
-                    <?php
-                        foreach($breeds as $breed) :
-                        $breed_list = (array) $breed;
-                        $breed_list = $breed_list[$gross.'t'];
-                    ?>
-                        <option value="<?= $breed_list ?>"><?= $breed_list ?></option>
-                    <?php endforeach;?>
-                </select>
-            </div>
-        </div>
-        <div class="select-age">
-        <!-- <p>Age:</p>
-                            
-        <div>
-            <input type="radio" id="Adult" name="Adult" value="Adult" checked>
-            <label for="Adult">Adult</label>
-        </div>
-
-        <div>
-            <input type="radio" id="Senior" name="Senior" value="Senior">
-            <label for="Senior">Senior</label>
-        </div>
-
-        <div>
-            <input type="radio" id="young" name="young" value="young">
-            <label for="young">Young</label>
-        </div> -->
-        <label for="select-age">Age:</label>
-        <div>
-            <select id="select-age">
-                    <option value="Young">Young</option>
-                    <option value="Adult">Adult</option>
-                    <option value="Senior">Senior</option>
+            <select id="cat-breed" class="tcr-select-option" data-filter-group="select-breed">
+                <!-- <option value="">--Please choose an option--</option> -->
+                <?php
+                    foreach($breeds as $breed) :
+                    $breed_list = (array) $breed;
+                    $breed_list = $breed_list[$gross.'t'];
+                ?>
+                    <option value="<?= $breed_list ?>" data-filter-value="<?= $breed_list ?>"><?= $breed_list ?></option>
+                <?php endforeach;?>
             </select>
         </div>
-        
-    </div>
 
-
-    <div class="select-size">
-        <!-- <p>Size:</p>
-
-
-        <div>
-            <input type="radio" id="S" name="S" value="S" checked>
-            <label for="S">Small</label>
-        </div>
-
-        <div>
-            <input type="radio" id="M" name="M" value="M">
-            <label for="M">Medium</label>
-        </div>
-
-        <div>
-            <input type="radio" id="L" name="L" value="L">
-            <label for="L">Large</label>
-        </div>
-
-        <div>
-            <input type="radio" id="XL" name="XL" value="XL">
-            <label for="XL">Extra-Large</label>
-        </div> -->
-        <label for="select-size">Size:</label>
-        <div>
-            <select id="select-size">
-                <option value="Small">Small</option>
-                <option value="Medium">Medium</option>
-                <option value="Large">Large</option>
+        <div class="tcr-filter select-age">
+            <label for="select-age">Age:</label>
+            <select id="select-age" class="tcr-select-option" data-filter-group="select-age">
+                    <option value="Young" data-filter-value="Younge">Young</option>
+                    <option value="Adult" data-filter-value="Adult">Adult</option>
+                    <option value="Senior" data-filter-value="Senior">Senior</option>
             </select>
         </div>
-       
-    </div>
 
-    <div class="select-sex">
-        <!-- <p>Gender:</p>
-
-        <div>
-            <input type="radio" id="yes" name="yes" value="yes" checked>
-            <label for="yes">Male</label>
+        <div class="tcr-filter select-size">
+            <label for="select-size">Size:</label>
+            <select id="select-size" class="tcr-select-option" data-filter-group="select-size">
+                <option value="Small" data-filter-value="size-S">Small</option>
+                <option value="Medium" data-filter-value="size-M">Medium</option>
+                <option value="Large" data-filter-value="size-L">Large</option>
+            </select>
         </div>
 
-        <div>
-            <input type="radio" id="no" name="no" value="no">
-            <label for="no">Female</label>
-        </div> -->
-        <label for="select-sez">Size:</label>
-        <div>
-            <select id="select-sex">
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
+        <div class="tcr-filter select-sex">
+            <label for="select-sex">Sex:</label>
+            <select id="select-sex" class="tcr-select-option" data-filter-group="select-sex">
+                <option value="sex-M" data-filter-value="sex-M">Male</option>
+                <option value="sex-F" data-filter-value="sex-F">Female</option>
             </select>
         </div>
     </div>
-    <span class="tcr-apply-to-adopt submit-filter">View More</span>
+    <button class="tcr-apply-to-adopt submit-filter">View More</button>
     </div>
 <!-- you got it boss -->
     <h2>Cat's Available for Adoption</h2>
@@ -125,6 +67,25 @@
             $name = (array) $pet->name;
             $name = $name[$gross.'t'];
 
+            $age = (array)$pet->age;
+            $age = $age[$gross.'t'];
+
+            $size = (array)$pet->size;
+            $size = 'size-'.$size[$gross.'t'];
+
+            $sex = (array)$pet->sex;
+            $sex = 'sex-'.$sex[$gross.'t'];
+
+            $breed_list = '';
+            foreach($pet->breeds->breed as $breed) {
+                if (gettype($breed) == 'string') {
+                    $breed_list .= $breed.' ';
+                } else {
+                    $breeds = (array)$breed;
+                    $breed_list .= $breeds[$gross.'t'].' ';
+                }
+            }
+
             $photo_to_use = array();
             foreach ($photos as $photo){
                 $photo = (array) $photo;
@@ -137,11 +98,10 @@
 
             ?>
 
-            <div class="tcr-item">
+            <div class="tcr-item <?php echo $age.' '.$size.' '.$sex.' '.$breed_list; ?>">
                 <h3><?=$name?></h3>
                 <div class="tcr-cat-image-container">
                     <div class="tcr-cat-image" style="background-image:url('<?=$photo_url;?>');"></div>
-
                 </div>
                 <p class="breed"></p>
                 <p class="age"></p>
