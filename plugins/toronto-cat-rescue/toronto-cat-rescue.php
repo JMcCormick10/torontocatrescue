@@ -53,7 +53,12 @@ add_action( 'admin_enqueue_scripts', 'trc_load_admin_resources');
 
 add_shortcode( 'pet_feed', 'trc_show_cat_feed' );
 
-function trc_show_cat_feed(){
+function trc_show_cat_feed($atts){
+    $a = shortcode_atts( array(
+        'form_id' => null
+    ), $atts );
+    $form_id = $a['form_id'];
+    if ($form_id == null) return;
     ob_start();
         // GRAB DIFFERENT CAT BREEDS
         $cat_breed_object = petFinder::getAllCatBreeds();
