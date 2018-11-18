@@ -166,6 +166,28 @@ html body {
     -webkit-box-shadow: none;
             box-shadow: none; }
 
+.tcr-view-info {
+  display: inline-block;
+  color: #fff;
+  background-color: #41b1a0;
+  border: 1px solid #41b1a0;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  text-decoration: none;
+  border-radius: 0px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  font-weight: bold;
+  font-family: 'Archivo Narrow', Arial, sans-serif; }
+  .tcr-view-info:hover, .tcr-view-info:focus, .tcr-view-info:active {
+    color: #fff;
+    background-color: #24558d;
+    border: 1px solid #24558d;
+    text-decoration: none;
+    outline: none;
+    -webkit-box-shadow: none;
+            box-shadow: none; }
+
 form.wpcf7-form {
   font-family: 'Lora', Georgia, serif; }
   form.wpcf7-form p {
@@ -578,5 +600,57 @@ form.wpcf7-form {
       outline: none;
       -webkit-box-shadow: none;
               box-shadow: none; }
+
+/*------------------------------- *\
+			MODALS
+\*-------------------------------- */
+.tcr-modal-wrapper {
+  width: 95%;
+  margin: 0 auto; }
+
+.tcr-modal-button-container {
+  margin-bottom: 25px; }
+  .tcr-modal-button-container button {
+    margin-bottom: 10px; }
+
+.tcr-cat-info .tcr-data-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 -15px; }
+  .tcr-cat-info .tcr-data-row .tcr-data-col {
+    width: 50%;
+    padding: 0 15px; }
+    @media screen and (max-width: 767px) {
+      .tcr-cat-info .tcr-data-row .tcr-data-col {
+        width: 100%;
+        margin-bottom: 20px; }
+        .tcr-cat-info .tcr-data-row .tcr-data-col .tcr-cat-image {
+          max-height: 250px; } }
+    @media screen and (max-width: 500px) {
+      .tcr-cat-info .tcr-data-row .tcr-data-col .tcr-cat-image {
+        max-height: 150px; } }
+.tcr-cat-info h2 {
+  margin: 0; }
+.tcr-cat-info .tcr-cat-image {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  max-width: 500px; }
+
+.tcr-form-container {
+  display: none; }
+
+.tcr-cat-data {
+  display: none; }
+
+/*------------------------------- *\
+			UTILITY
+\*-------------------------------- */
+.pl-0 {
+  padding-left: 0 !important; }
 
 /*# sourceMappingURL=frontend.css.map */

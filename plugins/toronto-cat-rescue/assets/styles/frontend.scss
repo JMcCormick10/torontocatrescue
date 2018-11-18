@@ -163,6 +163,10 @@ html {
 .tcr-apply-button {
 	@include button-style;
 }
+.tcr-view-info{
+	@include button-style;
+
+}
 
 form.wpcf7-form {
 	font-family: 'Lora', Georgia, serif;
@@ -330,4 +334,74 @@ form.wpcf7-form {
 			@include button-style(#fff, #d9534f, #d9534f, #d9534f, #fff, #d9534f);
 		}
 	}
+}
+
+/*------------------------------- *\
+			MODALS
+\*-------------------------------- */
+.tcr-modal-wrapper{
+	width: 95%;
+	margin: 0 auto;
+}
+.tcr-modal-button-container{
+	margin-bottom: 25px;
+	button{
+		margin-bottom: 10px;
+	}
+}
+.tcr-cat-info{
+
+	.tcr-data-row{
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -15px;
+
+		.tcr-data-col{
+			width: 50%;
+			padding: 0 15px;
+			
+			@media screen and (max-width: 767px){
+				width: 100%;
+				margin-bottom: 20px;
+
+				.tcr-cat-image{
+					max-height: 250px;
+				}
+			}
+
+			@media screen and (max-width: 500px){
+
+				.tcr-cat-image{
+					max-height: 150px;
+				}
+			}
+		}
+	}
+	h2{
+		margin: 0;
+	}
+	.tcr-cat-image{
+		width: 100%;
+		height: 300px;
+		background-size: cover;
+		background-position: center;
+		max-width: 500px;
+	}
+
+}
+
+.tcr-form-container{
+	display: none;
+}
+
+.tcr-cat-data{
+	display: none;
+}
+
+
+/*------------------------------- *\
+			UTILITY
+\*-------------------------------- */
+.pl-0{
+	padding-left: 0 !important;  
 }
