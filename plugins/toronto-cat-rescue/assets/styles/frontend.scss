@@ -167,6 +167,7 @@ html {
 
 form.wpcf7-form {
 	font-family: 'Lora', Georgia, serif;
+	line-height: 1.5;
 	p {
 		margin: 0px;
 		height: 0px;
@@ -178,6 +179,11 @@ form.wpcf7-form {
 		margin: 0px;
 		font-weight: bold;
 		margin-bottom: 5px;
+	}
+
+	.wpcf7-list-item{
+		display: block;
+		margin: 0.5em 0;
 	}
 	.wpcf7-response-output {
 		color: #000;
@@ -211,6 +217,19 @@ form.wpcf7-form {
 		font-weight: 600;
 		margin-top: 3px;
 	}
+	.wpcf7-form-control-signature-body{
+		width: 167px;
+		height: auto;
+		padding: 10px;
+		font-weight: bold;
+		font-style: normal;
+		font-stretch: normal;
+		letter-spacing: 1px;
+		color: #000;
+		background-color: #fff;
+		border: 1px solid #000;
+		margin-bottom: 5px;
+	}
 	input[type=text],
 	input[type=date],
 	input[type=tel],
@@ -223,8 +242,7 @@ form.wpcf7-form {
 	.wpcf7-date,
 	.wpcf7-textarea,
 	.wpcf7-select,
-	.wpcf7-number,
-	.wpcf7-form-control-signature-body {
+	.wpcf7-number {
 		width: 100%;
 		height: auto;
 		padding: 10px;
@@ -274,22 +292,19 @@ form.wpcf7-form {
 	}
 	.fill-container {
 		display: flex;
-		justify-content: center;
-		.fill-6 {
-			display: inline-block;
-			width: 16.666666%;
-			padding-left: 5px;
-			padding-right: 5px;
-			&:first-child {
-				padding-left: 0px;
+		justify-content: space-evenly;
+		flex-direction: column;
+		width: 100%;
+		/* padding: 0em 0.3em; */
+		border: 1px solid #a9a9a9;
+		margin: 0.5em 0;
+			div{
+				margin: 1.2em 0;
+				padding: 0 0.5em;
 			}
-			&:last-child {
-				padding-right: 0px;
-			}
-		}
 	}
 	.wrap {
-		margin-bottom: 10px;
+		margin: 0.5em 0;
 		clear: both;
 		&.left,
 		&.right {
@@ -316,7 +331,38 @@ form.wpcf7-form {
 				width: 30%;
 			}
 		}
+
+		
 	}
+
+	@media screen and (max-width: 720px){
+		.wrap{
+			&.left {
+				float: none;
+				padding-right: 0;
+				width: 100%;
+				&.large {
+					width: 100%;
+				}
+				&.small {
+					width: 100%;
+				}
+			}
+			&.right {
+				float: none;
+				padding-left: 0;
+				width: 100%;
+				&.large {
+					width: 100%;
+				}
+				&.small {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+
 	.wpcf7-form-control-signature-wrap {
 		width: 100% !important;
 		canvas {
