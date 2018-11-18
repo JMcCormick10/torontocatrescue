@@ -68,7 +68,9 @@
 
         <?php
         foreach ($pets as $index => $pet):
-
+            //id
+            $id = (array) $pet->id;
+            $id = $id[$gross.'t'];
 
             //name
             $name = (array) $pet->name;
@@ -115,7 +117,7 @@
 
             <div class="tcr-item <?php echo $age.' '.$size.' '.$sex.' '.$breed_list; ?>">
                 <div class="tcr-cat">
-                    <h3><?=$name?></h3>
+                    <h3 class="tcr-name"><?=$name?></h3>
                     <div class="tcr-cat-image-container">
                         <div class="tcr-cat-image" style="background-image:url('<?=$photo_url;?>');"></div>
                     </div>
@@ -124,7 +126,7 @@
                         <p><strong><?=$age;?>&nbsp;&nbsp;&bull;&nbsp;&nbsp;<?=($sex == 'sex-F' ? 'Female' : 'Male');?>&nbsp;&nbsp;&bull;&nbsp;&nbsp;<?=($size == 'size-S' ? 'Small' : ($size == 'size-M' ? 'Medium' : 'Large'))?></strong></p>
                     </div>
                     <div class="tcr-cat-footer">
-                        <button data-cat="cat-<?php echo $index; ?>" class="tcr-apply-to-adopt">View More</button>
+                        <button data-cat="cat-<?=$index;?>" data-cat-id="<?=$id;?>" data-cat-name="<?=$name;?>" class="tcr-apply-to-adopt">View More</button>
                     </div>
                 </div>
                 <div id="cat-<?php echo $index; ?>" class="tcr-cat-data">

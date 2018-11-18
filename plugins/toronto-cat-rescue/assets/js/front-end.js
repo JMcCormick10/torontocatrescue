@@ -3,6 +3,8 @@ jQuery(document).ready(function($) {
     	$('body').removeClass('no-overflow');
         $('.tcr-cat-modal').removeClass('tcr-cat-modal-show');
         $('.tcr-cat-modal .carousel').slick('unslick');
+        $('.tcr-cat-id').val('');
+    	$('.tcr-cat-name').val('');
     }
 
     function concatValues(obj) {
@@ -14,6 +16,8 @@ jQuery(document).ready(function($) {
     }
 
     $('.tcr-apply-to-adopt').click(function() {
+    	$('.tcr-cat-id').val($(this).data('cat-id'));
+    	$('.tcr-cat-name').val($(this).data('cat-name'));
         $('.tcr-cat-modal').addClass('tcr-cat-modal-show');
         $('body').addClass('no-overflow');
         var cat_data = $(this).siblings('.tcr-cat-data');
