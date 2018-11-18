@@ -18,22 +18,27 @@ jQuery(document).ready(function($) {
     $('.tcr-apply-button').click(function(){
         $('.tcr-form-container').show();
         $('.tcr-cat-info').hide();
-    }); 
+    });
 
     function populateModalData(cat_data){
-        
+
         $('.tcr-cat-info').html(cat_data.html());
-       
+
     }
 
-   
     $(window).click(function(event) {
         if ($(event.target).hasClass('tcr-cat-modal')) {
             $('.tcr-cat-modal').removeClass('tcr-cat-modal-show');
         }
     })
 
-    $('.tcr-select-option').select2();
+    $('.tcr-select-option').each(function(){
+    	console.log($(this).prev().text());
+    	$(this).select2({
+    		placeholder: 'Select '+$(this).prev().text(),
+    		width: 'resolve'
+    	});
+    })
 
     // flatten object by concatting values
     function concatValues(obj) {

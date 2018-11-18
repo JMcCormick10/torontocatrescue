@@ -5,16 +5,18 @@ html body {
     overflow: hidden; }
 
 .tcr-filter-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
+  flex-wrap: wrap;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding-bottom: 25px;
   margin-bottom: 25px; }
   .tcr-filter-container .tcr-filter {
-    padding-right: 10px; }
+    padding-right: 10px;
+    padding-top: 10px; }
     .tcr-filter-container .tcr-filter label {
       display: block; }
+    .tcr-filter-container .tcr-filter select {
+      min-width: 100px; }
 
 .tcr-cat-modal {
   display: none;
@@ -72,52 +74,54 @@ html body {
   margin: 0 -15px; }
   .tcr-archive-list .tcr-item {
     width: 25%;
-    padding: 0 15px;
-    margin-bottom: 15px; }
-    .tcr-archive-list .tcr-item h3 {
-      font-family: 'Archivo Narrow', Arial, sans-serif;
-      color: #24558d;
-      font-size: 25px;
-      margin-bottom: 0; }
-    @media screen and (max-width: 992px) {
-      .tcr-archive-list .tcr-item {
-        width: 50%; } }
-    @media screen and (max-width: 560px) {
-      .tcr-archive-list .tcr-item {
-        width: 100%; } }
-    .tcr-archive-list .tcr-item .tcr-cat-image-container {
-      width: 100%;
-      height: 200px;
-      overflow: hidden; }
-      .tcr-archive-list .tcr-item .tcr-cat-image-container:hover {
-        cursor: pointer; }
-      .tcr-archive-list .tcr-item .tcr-cat-image-container .tcr-cat-image {
+    padding: 10px; }
+    .tcr-archive-list .tcr-item .tcr-cat {
+      border: 1px solid rgba(0, 0, 0, 0.1); }
+      .tcr-archive-list .tcr-item .tcr-cat h3 {
+        font-family: 'Archivo Narrow', Arial, sans-serif;
+        color: #24558d;
+        font-size: 25px;
+        margin: 0px;
+        padding: 10px; }
+      @media screen and (max-width: 992px) {
+        .tcr-archive-list .tcr-item .tcr-cat {
+          width: 50%; } }
+      @media screen and (max-width: 560px) {
+        .tcr-archive-list .tcr-item .tcr-cat {
+          width: 100%; } }
+      .tcr-archive-list .tcr-item .tcr-cat .tcr-cat-image-container {
         width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        transition: 0.3s; }
-        .tcr-archive-list .tcr-item .tcr-cat-image-container .tcr-cat-image:hover {
-          transform: scale(1.1); }
-    .tcr-archive-list .tcr-item .tcr-apply-to-adopt {
-      display: inline-block;
-      color: #fff;
-      background-color: #41b1a0;
-      border: 1px solid #41b1a0;
-      text-transform: uppercase;
-      padding: 8px 20px;
-      text-decoration: none;
-      border-radius: 0px;
-      transition: all 0.2s;
-      font-weight: bold;
-      font-family: 'Archivo Narrow', Arial, sans-serif; }
-      .tcr-archive-list .tcr-item .tcr-apply-to-adopt:hover, .tcr-archive-list .tcr-item .tcr-apply-to-adopt:focus, .tcr-archive-list .tcr-item .tcr-apply-to-adopt:active {
+        height: 200px;
+        overflow: hidden; }
+        .tcr-archive-list .tcr-item .tcr-cat .tcr-cat-image-container:hover {
+          cursor: pointer; }
+        .tcr-archive-list .tcr-item .tcr-cat .tcr-cat-image-container .tcr-cat-image {
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          transition: 0.3s; }
+          .tcr-archive-list .tcr-item .tcr-cat .tcr-cat-image-container .tcr-cat-image:hover {
+            transform: scale(1.1); }
+      .tcr-archive-list .tcr-item .tcr-cat .tcr-apply-to-adopt {
+        display: inline-block;
         color: #fff;
-        background-color: #24558d;
-        border: 1px solid #24558d;
+        background-color: #41b1a0;
+        border: 1px solid #41b1a0;
+        text-transform: uppercase;
+        padding: 8px 20px;
         text-decoration: none;
-        outline: none;
-        box-shadow: none; }
+        border-radius: 0px;
+        transition: all 0.2s;
+        font-weight: bold;
+        font-family: 'Archivo Narrow', Arial, sans-serif; }
+        .tcr-archive-list .tcr-item .tcr-cat .tcr-apply-to-adopt:hover, .tcr-archive-list .tcr-item .tcr-cat .tcr-apply-to-adopt:focus, .tcr-archive-list .tcr-item .tcr-cat .tcr-apply-to-adopt:active {
+          color: #fff;
+          background-color: #24558d;
+          border: 1px solid #24558d;
+          text-decoration: none;
+          outline: none;
+          box-shadow: none; }
 
 .tcr-apply-button {
   display: inline-block;
