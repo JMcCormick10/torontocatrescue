@@ -320,7 +320,8 @@ html body {
 
 .tcr-filter-container,
 form.wpcf7-form {
-  font-family: 'Lora', Georgia, serif; }
+  font-family: 'Lora', Georgia, serif;
+  line-height: 1.5; }
   .tcr-filter-container p,
   form.wpcf7-form p {
     margin: 0px;
@@ -333,6 +334,10 @@ form.wpcf7-form {
     margin: 0px;
     font-weight: bold;
     margin-bottom: 5px; }
+  .tcr-filter-container .wpcf7-list-item,
+  form.wpcf7-form .wpcf7-list-item {
+    display: block;
+    margin: 0.5em 0; }
   .tcr-filter-container .wpcf7-response-output,
   form.wpcf7-form .wpcf7-response-output {
     color: #000;
@@ -365,6 +370,19 @@ form.wpcf7-form {
     letter-spacing: 0.8px;
     font-weight: 600;
     margin-top: 3px; }
+  .tcr-filter-container .wpcf7-form-control-signature-body,
+  form.wpcf7-form .wpcf7-form-control-signature-body {
+    width: 167px;
+    height: auto;
+    padding: 10px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: 1px;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+    margin-bottom: 5px; }
   .tcr-filter-container input[type=text],
   .tcr-filter-container input[type=date],
   .tcr-filter-container input[type=tel],
@@ -379,7 +397,6 @@ form.wpcf7-form {
   .tcr-filter-container .wpcf7-textarea,
   .tcr-filter-container .wpcf7-select,
   .tcr-filter-container .wpcf7-number,
-  .tcr-filter-container .wpcf7-form-control-signature-body,
   form.wpcf7-form input[type=text],
   form.wpcf7-form input[type=date],
   form.wpcf7-form input[type=tel],
@@ -393,8 +410,7 @@ form.wpcf7-form {
   form.wpcf7-form .wpcf7-date,
   form.wpcf7-form .wpcf7-textarea,
   form.wpcf7-form .wpcf7-select,
-  form.wpcf7-form .wpcf7-number,
-  form.wpcf7-form .wpcf7-form-control-signature-body {
+  form.wpcf7-form .wpcf7-number {
     width: 100%;
     height: auto;
     padding: 10px;
@@ -500,13 +516,6 @@ form.wpcf7-form {
     .tcr-filter-container .wpcf7-number:-ms-input-placeholder,
     .tcr-filter-container .wpcf7-number:-moz-placeholder,
     .tcr-filter-container .wpcf7-number::-ms-input-placeholder,
-    .tcr-filter-container .wpcf7-form-control-signature-body:placeholder-shown,
-    .tcr-filter-container .wpcf7-form-control-signature-body::-webkit-input-placeholder,
-    .tcr-filter-container .wpcf7-form-control-signature-body::-webkit-input-placeholder,
-    .tcr-filter-container .wpcf7-form-control-signature-body::-moz-placeholder,
-    .tcr-filter-container .wpcf7-form-control-signature-body:-ms-input-placeholder,
-    .tcr-filter-container .wpcf7-form-control-signature-body:-moz-placeholder,
-    .tcr-filter-container .wpcf7-form-control-signature-body::-ms-input-placeholder,
     form.wpcf7-form input[type=text]:placeholder-shown,
     form.wpcf7-form input[type=text]::-webkit-input-placeholder,
     form.wpcf7-form input[type=text]::-webkit-input-placeholder,
@@ -604,14 +613,7 @@ form.wpcf7-form {
     form.wpcf7-form .wpcf7-number::-moz-placeholder,
     form.wpcf7-form .wpcf7-number:-ms-input-placeholder,
     form.wpcf7-form .wpcf7-number:-moz-placeholder,
-    form.wpcf7-form .wpcf7-number::-ms-input-placeholder,
-    form.wpcf7-form .wpcf7-form-control-signature-body:placeholder-shown,
-    form.wpcf7-form .wpcf7-form-control-signature-body::-webkit-input-placeholder,
-    form.wpcf7-form .wpcf7-form-control-signature-body::-webkit-input-placeholder,
-    form.wpcf7-form .wpcf7-form-control-signature-body::-moz-placeholder,
-    form.wpcf7-form .wpcf7-form-control-signature-body:-ms-input-placeholder,
-    form.wpcf7-form .wpcf7-form-control-signature-body:-moz-placeholder,
-    form.wpcf7-form .wpcf7-form-control-signature-body::-ms-input-placeholder {
+    form.wpcf7-form .wpcf7-number::-ms-input-placeholder {
       color: #000; }
     .tcr-filter-container input[type=text]:placeholder-shown, .tcr-filter-container input[type=text]::placeholder, .tcr-filter-container input[type=text]::-webkit-input-placeholder, .tcr-filter-container input[type=text]::-moz-placeholder, .tcr-filter-container input[type=text]:-ms-input-placeholder, .tcr-filter-container input[type=text]:-moz-placeholder, .tcr-filter-container input[type=text]::-ms-input-placeholder,
     .tcr-filter-container input[type=date]:placeholder-shown,
@@ -705,13 +707,6 @@ form.wpcf7-form {
     .tcr-filter-container .wpcf7-number:-ms-input-placeholder,
     .tcr-filter-container .wpcf7-number:-moz-placeholder,
     .tcr-filter-container .wpcf7-number::-ms-input-placeholder,
-    .tcr-filter-container .wpcf7-form-control-signature-body:placeholder-shown,
-    .tcr-filter-container .wpcf7-form-control-signature-body::placeholder,
-    .tcr-filter-container .wpcf7-form-control-signature-body::-webkit-input-placeholder,
-    .tcr-filter-container .wpcf7-form-control-signature-body::-moz-placeholder,
-    .tcr-filter-container .wpcf7-form-control-signature-body:-ms-input-placeholder,
-    .tcr-filter-container .wpcf7-form-control-signature-body:-moz-placeholder,
-    .tcr-filter-container .wpcf7-form-control-signature-body::-ms-input-placeholder,
     form.wpcf7-form input[type=text]:placeholder-shown,
     form.wpcf7-form input[type=text]::placeholder,
     form.wpcf7-form input[type=text]::-webkit-input-placeholder,
@@ -809,14 +804,7 @@ form.wpcf7-form {
     form.wpcf7-form .wpcf7-number::-moz-placeholder,
     form.wpcf7-form .wpcf7-number:-ms-input-placeholder,
     form.wpcf7-form .wpcf7-number:-moz-placeholder,
-    form.wpcf7-form .wpcf7-number::-ms-input-placeholder,
-    form.wpcf7-form .wpcf7-form-control-signature-body:placeholder-shown,
-    form.wpcf7-form .wpcf7-form-control-signature-body::placeholder,
-    form.wpcf7-form .wpcf7-form-control-signature-body::-webkit-input-placeholder,
-    form.wpcf7-form .wpcf7-form-control-signature-body::-moz-placeholder,
-    form.wpcf7-form .wpcf7-form-control-signature-body:-ms-input-placeholder,
-    form.wpcf7-form .wpcf7-form-control-signature-body:-moz-placeholder,
-    form.wpcf7-form .wpcf7-form-control-signature-body::-ms-input-placeholder {
+    form.wpcf7-form .wpcf7-number::-ms-input-placeholder {
       color: #000; }
     .tcr-filter-container input[type=text]:focus,
     .tcr-filter-container input[type=date]:focus,
@@ -832,7 +820,6 @@ form.wpcf7-form {
     .tcr-filter-container .wpcf7-textarea:focus,
     .tcr-filter-container .wpcf7-select:focus,
     .tcr-filter-container .wpcf7-number:focus,
-    .tcr-filter-container .wpcf7-form-control-signature-body:focus,
     form.wpcf7-form input[type=text]:focus,
     form.wpcf7-form input[type=date]:focus,
     form.wpcf7-form input[type=tel]:focus,
@@ -846,8 +833,7 @@ form.wpcf7-form {
     form.wpcf7-form .wpcf7-date:focus,
     form.wpcf7-form .wpcf7-textarea:focus,
     form.wpcf7-form .wpcf7-select:focus,
-    form.wpcf7-form .wpcf7-number:focus,
-    form.wpcf7-form .wpcf7-form-control-signature-body:focus {
+    form.wpcf7-form .wpcf7-number:focus {
       outline: none;
       border: 1px solid #24558d; }
     .tcr-filter-container input[type=text].wpcf7-not-valid,
@@ -864,7 +850,6 @@ form.wpcf7-form {
     .tcr-filter-container .wpcf7-textarea.wpcf7-not-valid,
     .tcr-filter-container .wpcf7-select.wpcf7-not-valid,
     .tcr-filter-container .wpcf7-number.wpcf7-not-valid,
-    .tcr-filter-container .wpcf7-form-control-signature-body.wpcf7-not-valid,
     form.wpcf7-form input[type=text].wpcf7-not-valid,
     form.wpcf7-form input[type=date].wpcf7-not-valid,
     form.wpcf7-form input[type=tel].wpcf7-not-valid,
@@ -878,8 +863,7 @@ form.wpcf7-form {
     form.wpcf7-form .wpcf7-date.wpcf7-not-valid,
     form.wpcf7-form .wpcf7-textarea.wpcf7-not-valid,
     form.wpcf7-form .wpcf7-select.wpcf7-not-valid,
-    form.wpcf7-form .wpcf7-number.wpcf7-not-valid,
-    form.wpcf7-form .wpcf7-form-control-signature-body.wpcf7-not-valid {
+    form.wpcf7-form .wpcf7-number.wpcf7-not-valid {
       margin-bottom: 0px;
       border: 1px solid #d9534f; }
       .tcr-filter-container input[type=text].wpcf7-not-valid:focus,
@@ -896,7 +880,6 @@ form.wpcf7-form {
       .tcr-filter-container .wpcf7-textarea.wpcf7-not-valid:focus,
       .tcr-filter-container .wpcf7-select.wpcf7-not-valid:focus,
       .tcr-filter-container .wpcf7-number.wpcf7-not-valid:focus,
-      .tcr-filter-container .wpcf7-form-control-signature-body.wpcf7-not-valid:focus,
       form.wpcf7-form input[type=text].wpcf7-not-valid:focus,
       form.wpcf7-form input[type=date].wpcf7-not-valid:focus,
       form.wpcf7-form input[type=tel].wpcf7-not-valid:focus,
@@ -910,8 +893,7 @@ form.wpcf7-form {
       form.wpcf7-form .wpcf7-date.wpcf7-not-valid:focus,
       form.wpcf7-form .wpcf7-textarea.wpcf7-not-valid:focus,
       form.wpcf7-form .wpcf7-select.wpcf7-not-valid:focus,
-      form.wpcf7-form .wpcf7-number.wpcf7-not-valid:focus,
-      form.wpcf7-form .wpcf7-form-control-signature-body.wpcf7-not-valid:focus {
+      form.wpcf7-form .wpcf7-number.wpcf7-not-valid:focus {
         outline: none;
         border: 1px solid #24558d; }
   .tcr-filter-container .select2-selection,
@@ -973,24 +955,24 @@ form.wpcf7-form {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center; }
-    .tcr-filter-container .fill-container .fill-6,
-    form.wpcf7-form .fill-container .fill-6 {
-      display: inline-block;
-      width: 16.666666%;
-      padding-left: 5px;
-      padding-right: 5px; }
-      .tcr-filter-container .fill-container .fill-6:first-child,
-      form.wpcf7-form .fill-container .fill-6:first-child {
-        padding-left: 0px; }
-      .tcr-filter-container .fill-container .fill-6:last-child,
-      form.wpcf7-form .fill-container .fill-6:last-child {
-        padding-right: 0px; }
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    /* padding: 0em 0.3em; */
+    border: 1px solid #a9a9a9;
+    margin: 0.5em 0; }
+    .tcr-filter-container .fill-container div,
+    form.wpcf7-form .fill-container div {
+      margin: 1.2em 0;
+      padding: 0 0.5em; }
   .tcr-filter-container .wrap,
   form.wpcf7-form .wrap {
-    margin-bottom: 10px;
+    margin: 0.5em 0;
     clear: both; }
     .tcr-filter-container .wrap.left, .tcr-filter-container .wrap.right,
     form.wpcf7-form .wrap.left,
@@ -1017,6 +999,29 @@ form.wpcf7-form {
       .tcr-filter-container .wrap.right.small,
       form.wpcf7-form .wrap.right.small {
         width: 30%; }
+  @media screen and (max-width: 720px) {
+    .tcr-filter-container .wrap.left,
+    form.wpcf7-form .wrap.left {
+      float: none;
+      padding-right: 0;
+      width: 100%; }
+      .tcr-filter-container .wrap.left.large,
+      form.wpcf7-form .wrap.left.large {
+        width: 100%; }
+      .tcr-filter-container .wrap.left.small,
+      form.wpcf7-form .wrap.left.small {
+        width: 100%; }
+    .tcr-filter-container .wrap.right,
+    form.wpcf7-form .wrap.right {
+      float: none;
+      padding-left: 0;
+      width: 100%; }
+      .tcr-filter-container .wrap.right.large,
+      form.wpcf7-form .wrap.right.large {
+        width: 100%; }
+      .tcr-filter-container .wrap.right.small,
+      form.wpcf7-form .wrap.right.small {
+        width: 100%; } }
   .tcr-filter-container .wpcf7-form-control-signature-wrap,
   form.wpcf7-form .wpcf7-form-control-signature-wrap {
     width: 100% !important; }
