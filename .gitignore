@@ -18,3 +18,4 @@ wp-content/plugins/hello.php
 /sitemap.xml.gz
 
 uploads/wpcf7_signatures/*
+plugins/toronto-cat-rescue/assets/styles/.sass-cache/*
