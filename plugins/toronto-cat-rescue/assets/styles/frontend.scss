@@ -69,8 +69,6 @@ html {
 
     &.tcr-cat-modal-show {
 		display: block;
-		// display: flex;
-		// align-items: center;
     }
 
     .tcr-cat-modal-content{
@@ -96,6 +94,12 @@ html {
 			    cursor: pointer;
 			}
 		}
+		.tcr-cat-modal-info {
+			width: 30%;
+		}
+		.tcr-cat-modal-desc {
+			width: 70%;
+		}
     }
 }
 
@@ -104,19 +108,24 @@ html {
     to {top: 0; opacity: 1}
 }
 
-.tcr-archive-list{
+.tcr-archive-list {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -15px;
 	.tcr-item {
 		width: 25%;
 		padding: 10px;
+		@media screen and (max-width: 1200px){
+            width: 33.333333%;
+        }
+		@media screen and (max-width: 992px){
+            width: 50%;
+        }
+        @media screen and (max-width: 560px){
+            width: 100%;
+        }
 		.tcr-cat {
 			border: 1px solid rgba(#000, 0.1);
-
-
-	        // margin-bottom: 15px;
-
 	        h3{
 	        	font-family: 'Archivo Narrow', Arial, sans-serif;
 	            color: $blue;
@@ -124,38 +133,32 @@ html {
 	            margin: 0px;
 	            padding: 10px;
 	        }
-
-	        @media screen and (max-width: 992px){
-	            width: 50%;
-	        }
-
-	        @media screen and (max-width: 560px){
-	            width: 100%;
-	        }
-
 	        .tcr-cat-image-container{
 	            width: 100%;
 	            height: 200px;
 	            overflow: hidden;
-	            &:hover{
-	                cursor: pointer;
-	            }
-
 	            .tcr-cat-image{
 	                width: 100%;
 	                height: 100%;
 	                background-size: cover;
 	                background-position: center;
 	                transition: 0.3s;
-
-	                &:hover{
-	                    transform:scale(1.1);
-	                }
-
 	            }
 	        }
-	        .tcr-apply-to-adopt{
-	            @include button-style;
+	        .tcr-cat-body {
+	        	padding: 10px;
+	        	border-bottom: 1px solid rgba(#000, 0.1);
+	        	p {
+	        		margin: 0px;
+	        	}
+	        }
+	        .tcr-cat-footer {
+	        	padding: 10px 25px;
+				.tcr-apply-to-adopt{
+		            @include button-style;
+		            display: block;
+		            width: 100%;
+		        }
 	        }
 	    }
 	}
@@ -166,6 +169,114 @@ html {
 .tcr-view-info{
 	@include button-style;
 
+}
+
+.carousel {
+	padding: 30px 10px 40px 10px;
+	@media only screen and (max-width: 767px) {
+		padding: 15px 0px 25px 0px;
+	}
+	// max-height: 90vh;
+	.slick-list {
+		// max-height: 90vh;
+		.slick-track {
+			// max-height: 90vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			.slick-slide {
+				margin-right: 5px;
+				margin-left: 5px;
+				// max-height: 90vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				opacity: 0.5;
+				transition: all 0.2s;
+				&.slick-current {
+					opacity: 1;
+				}
+				& > div {
+					width: 100%;
+					// max-height: 90vh;
+					overflow: hidden;
+					img {
+						margin: 0 auto;
+						max-height: 90vh;
+						width: auto !important;
+						max-width: 100%;
+						padding: 0px 5px;
+						display: block !important;
+					}
+				}
+			}
+		}
+	}
+	.slick-prev,
+	.slick-next {
+		font-size: 35px;
+		line-height: normal;
+		color: $green;
+		height: auto;
+		width: auto;
+		z-index: 300;
+		padding: 10px;
+		transition: all 0.2s;
+		top: 50%;
+		&:hover,
+		&:focus {
+			color: #000;
+		}
+		&:before {
+			content: '' !important;
+		}
+	}
+	.slick-prev {
+		left: -30px;
+		@media only screen and (max-width: 767px) {
+			left: -32px;
+		}
+	}
+	.slick-next {
+		right: -30px;
+	}
+	.slick-dots {
+		bottom: -10px;
+		& li button {
+			height: 8px;
+			width: 8px;
+			padding: 0px;
+			border: none;
+			outline: none;
+			background-color: $green;
+			opacity: 0.5;
+			border-radius: 50%;
+			transition: all 0.2s;
+			&:before {
+				content: '';
+				outline: none;
+			}
+			&:hover,
+			&:focus {
+				opacity: 1;
+				outline: none;
+			}
+		}
+		& li.slick-active button {
+			opacity: 1;
+			background-color: $green !important;
+			outline: none;
+			&:hover,
+			&:focus {
+				cursor: default;
+			}
+			&:before {
+				content: '';
+				outline: none;
+				color: none !important;
+			}
+		}
+	}
 }
 
 form.wpcf7-form {
@@ -359,7 +470,7 @@ form.wpcf7-form {
 		.tcr-data-col{
 			width: 50%;
 			padding: 0 15px;
-			
+
 			@media screen and (max-width: 767px){
 				width: 100%;
 				margin-bottom: 20px;
@@ -403,5 +514,5 @@ form.wpcf7-form {
 			UTILITY
 \*-------------------------------- */
 .pl-0{
-	padding-left: 0 !important;  
+	padding-left: 0 !important;
 }

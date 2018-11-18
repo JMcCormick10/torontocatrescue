@@ -63,7 +63,7 @@
     <div class="tcr-archive-list">
 
         <?php
-        foreach ($pets as $pet):
+        foreach ($pets as $index => $pet):
 
 
             //name
@@ -89,37 +89,19 @@
                 }
             }
 
-            $photo_to_use = array();
+            $feature_photo = [];
+            $carousel = [];
             $photos =  $pet->media->photos->photo;
             foreach ($photos as $photo){
                 $photo = (array) $photo;
 
+
                 if ($photo[$gross_at.'size'] == 'x'){
-                    $photo_to_use = $photo;
+                    $feature_photo = $photo;
+                    $carousel[] = $photo[$gross.'t'];
                 }
             }
-            $photo_url = $photo_to_use[$gross.'t'];
-
-            //sex
-            $pet_sex_array = (array) $pet->sex;
-            $pet_sex = $pet_sex_array[$gross.'t'];
-
-
-            //breed
-            $breed_list = [];
-            foreach($pet->breeds->breed as $breed) {
-                if (gettype($breed) == 'string') {
-                    $breed_list [] =  $breed.'';
-                } else {
-                    $breeds = (array)$breed;
-                    $breed_list[] = $breeds[$gross.'t'].'';
-                }
-            }
-
-            //age
-            $age_array = (array) $pet->age;
-            $pet_age = $age_array[$gross.'t'];
-
+            $photo_url = $feature_photo[$gross.'t'];
             //description
             $description_array = (array) $pet->description;
             $pet_description = $description_array[$gross.'t'];
@@ -131,36 +113,37 @@
                     <div class="tcr-cat-image-container">
                         <div class="tcr-cat-image" style="background-image:url('<?=$photo_url;?>');"></div>
                     </div>
-                    <p class="breed"></p>
-                    <p class="age"></p>
-                    <p class="description"></p>
-                    <button class="tcr-apply-to-adopt">View More</button>
+                    <div class="tcr-cat-body">
+                        <p class="breed"><strong>Breed: </strong><?=$breed_list;?></p>
+                        <p class="age"><strong>Age: </strong><?=$age;?></p>
+                        <p class="sex"><strong>Gender: </strong><?=($sex == 'sex-F' ? 'Female' : 'Male');?></p>
+                    </div>
+                    <div class="tcr-cat-footer">
+                        <button data-cat="cat-<?php echo $index; ?>" class="tcr-apply-to-adopt">View More</button>
+                    </div>
                 </div>
-                <div class="tcr-cat-data">
+                <div id="cat-<?php echo $index; ?>" class="tcr-cat-data">
+                    <div>
+                        <?php if ($carousel): ?>
+                            <div class="carousel">
+                            <?php foreach ($carousel as $image): ?>
+                                <img src="<?=$image;?>" alt="">
+                            <?php endforeach ?>
+                            </div>
+                        <?php endif ?>
+                    </div>
                     <div class="tcr-data-row">
-                        <div class="tcr-data-col pl-0">
-                            <div class="tcr-cat-image" style="background-image:url('<?=$photo_url;?>');"></div>
-                        </div>
-                        <div class="tcr-data-col">
+                        <div class="tcr-cat-modal-info">
                             <h2><strong>Name: </strong><?=$name;?></h2>
                             <div class="tcr-modal-info-section">
-                                <p><strong>Sex: </strong><?=$pet_sex;?></p>
-                                <p><strong>Breeds: </strong>
-                                    <?php
-                                    $counter = 1;
-                                    $breed_count = count($breed_list);
-                                    foreach ($breed_list as $breed):
-                                        echo $breed;
-                                        if ($counter != $breed_count) echo ', ';
-                                        $counter++;
-                                     endforeach;?>
-                                </p>
-                                <p><strong>Age: </strong><?=$pet_age;?></p>
+                                <p><strong>Gender: </strong><?=($sex == 'sex-F' ? 'Female' : 'Male');?></p>
+                                <p><strong>Breeds: </strong><?=$breed_list;?></p>
+                                <p><strong>Age: </strong><?=$age;?></p>
                             </div>
                         </div>
-                        <p><strong>Description: </strong><?=$pet_description;?></p>
-
-
+                        <div class="tcr-cat-modal-desc">
+                            <p><strong>Description: </strong><?=$pet_description;?></p>
+                        </div>
                     </div>
                 </div>
             </div>

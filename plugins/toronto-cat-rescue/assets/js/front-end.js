@@ -2,13 +2,31 @@ jQuery(document).ready(function($) {
     $('.tcr-apply-to-adopt').click(function() {
         $('.tcr-cat-modal').addClass('tcr-cat-modal-show');
         $('body').addClass('no-overflow');
+        console.log($(this).data('cat'));
         var cat_data = $(this).siblings('.tcr-cat-data');
-        populateModalData(cat_data);
+        populateModalData($(this).data('cat'));
+        $('.tcr-cat-modal .carousel').slick({
+        	variableWidth: true,
+        	centerMode: true
+			// slidesToShow: 1,
+			// slidesToScroll: 1,
+			// dots: true,
+			// appendDots : $('.slick-nav'),
+			// autoplay: true,
+			// autoplaySpeed: 3500,
+			// speed: 700,
+	   	});
+	   	$('.tcr-cat-modal .carousel .slick-prev').html('<span class="fa fa-angle-left"></span>');
+		$('.tcr-cat-modal .carousel .slick-next').html('<span class="fa fa-angle-right"></span>');
+	   	$('.tcr-cat-modal .carousel').on('breakpoint', function(event, slick, currentSlide, nextSlide) {
+			$('.tcr-cat-modal .carousel .slick-prev').html('<span class="fa fa-angle-left"></span>');
+			$('.tcr-cat-modal .carousel .slick-next').html('<span class="fa fa-angle-right"></span>');
+		});
     });
     $('.tcr-exit-modal').click(function(){
         $('.tcr-cat-modal').removeClass('tcr-cat-modal-show');
         $('body').removeClass('no-overflow');
-
+        $('.tcr-cat-modal .carousel').slick('unslick');
     });
 
     $('.tcr-view-info').click(function(){
@@ -21,9 +39,7 @@ jQuery(document).ready(function($) {
     });
 
     function populateModalData(cat_data){
-
-        $('.tcr-cat-info').html(cat_data.html());
-
+        $('.tcr-cat-info').html($('#'+cat_data).html());
     }
 
     $(window).click(function(event) {
@@ -69,4 +85,6 @@ jQuery(document).ready(function($) {
         console.log(filterValue);
         $container.isotope({ filter: filterValue });
     });
+
+
 });
