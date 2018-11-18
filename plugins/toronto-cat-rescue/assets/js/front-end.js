@@ -3,17 +3,25 @@ jQuery(document).ready(function($) {
         $('.tcr-cat-modal').addClass('tcr-cat-modal-show');
         $('body').addClass('no-overflow');
     })
+
     $('.tcr-exit-modal').click(function() {
         $('.tcr-cat-modal').removeClass('tcr-cat-modal-show');
         $('body').removeClass('no-overflow');
     })
+
     $(window).click(function(event) {
         if ($(event.target).hasClass('tcr-cat-modal')) {
             $('.tcr-cat-modal').removeClass('tcr-cat-modal-show');
         }
     })
 
-    $('.tcr-select-option').select2();
+    $('.tcr-select-option').each(function(){
+    	console.log($(this).prev().text());
+    	$(this).select2({
+    		placeholder: 'Select '+$(this).prev().text(),
+    		width: 'resolve'
+    	});
+    })
 
     // flatten object by concatting values
     function concatValues(obj) {
