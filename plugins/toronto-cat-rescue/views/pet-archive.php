@@ -217,7 +217,7 @@
             <div class="tcr-form-container">
                 <!-- SIERRA. PUT YOUR FORM HERE DUDE -->
                 <div class="tcr-pet-form">
-                    <?php  echo do_shortcode('[contact-form-7 id="8" title="Adoption Form"]'); ?>
+                    <?php  echo do_shortcode('[contact-form-7 id="'.$form_id.'" title="Adoption Form"]'); ?>
                 </div>
             </div>
         </div>
