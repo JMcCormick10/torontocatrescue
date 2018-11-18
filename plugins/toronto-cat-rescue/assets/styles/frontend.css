@@ -4,6 +4,18 @@ html body {
   html body.no-overflow {
     overflow: hidden; }
 
+.tcr-filter-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 25px;
+  margin-bottom: 25px; }
+  .tcr-filter-container .tcr-filter {
+    padding-right: 10px; }
+    .tcr-filter-container .tcr-filter label {
+      display: block; }
+
 .tcr-cat-modal {
   display: none;
   /* Hidden by default */

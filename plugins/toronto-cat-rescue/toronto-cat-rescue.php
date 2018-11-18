@@ -58,7 +58,7 @@ function trc_show_cat_feed(){
         // GRAB DIFFERENT CAT BREEDS
         $cat_breed_object = petFinder::getAllCatBreeds();
         $breeds = $cat_breed_object->petfinder->breeds->breed;
-        // GRAB PET DATA FROM TORONTO CAT RESCUE 
+        // GRAB PET DATA FROM TORONTO CAT RESCUE
         $pet_object = petFinder::getAllPets();
         $pets = $pet_object->petfinder->pets->pet;
         require_once(__DIR__."/views/pet-archive.php");
@@ -69,7 +69,13 @@ function trc_show_cat_feed(){
 \* ----------------------------------------------- */
 function tcr_load_frontend_resources() {
 
-	wp_enqueue_script('tcr-masking-script', '//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js', array('jquery'), '1.14.15');
+    wp_enqueue_script('tcr-masking-script', '//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js', array('jquery'), '1.14.15');
+
+    wp_enqueue_script('isotope_js', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js','','3.0.6');
+
+	wp_enqueue_style('tcr-select2-style', '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css');
+    wp_enqueue_script('tcr-select2-script', '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js', array('jquery'), '4.0.5');
+
 	wp_enqueue_script('tcr-mask-script', plugins_url('/assets/js/jquery-mask-settings.js', __FILE__), array('jquery'));
 	wp_enqueue_script('tcr-global-script', plugins_url('/assets/js/global.js', __FILE__), array('jquery'));
 
