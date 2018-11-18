@@ -23,7 +23,7 @@
             <label for="cat-breed">Breed:</label>
             <div>
                 <select id="cat-breed">
-                    <option value="">--Please choose an option--</option>
+                    <!-- <option value="">--Please choose an option--</option> -->
                     <?php
                         foreach($breeds as $breed) :
                         $breed_list = (array) $breed;
@@ -34,9 +34,9 @@
                 </select>
             </div>
         </div>
-         <div class="select-age">
-        <p>Age:</p>
-
+        <div class="select-age">
+        <!-- <p>Age:</p>
+                            
         <div>
             <input type="radio" id="Adult" name="Adult" value="Adult" checked>
             <label for="Adult">Adult</label>
@@ -50,12 +50,22 @@
         <div>
             <input type="radio" id="young" name="young" value="young">
             <label for="young">Young</label>
+        </div> -->
+        <label for="select-age">Age:</label>
+        <div>
+            <select id="select-age">
+                    <option value="Young">Young</option>
+                    <option value="Adult">Adult</option>
+                    <option value="Senior">Senior</option>
+            </select>
         </div>
+        
     </div>
 
 
     <div class="select-size">
-        <p>Size:</p>
+        <!-- <p>Size:</p>
+
 
         <div>
             <input type="radio" id="S" name="S" value="S" checked>
@@ -75,11 +85,20 @@
         <div>
             <input type="radio" id="XL" name="XL" value="XL">
             <label for="XL">Extra-Large</label>
+        </div> -->
+        <label for="select-size">Size:</label>
+        <div>
+            <select id="select-size">
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+            </select>
         </div>
+       
     </div>
 
     <div class="select-sex">
-        <p>Gender:</p>
+        <!-- <p>Gender:</p>
 
         <div>
             <input type="radio" id="yes" name="yes" value="yes" checked>
@@ -89,6 +108,13 @@
         <div>
             <input type="radio" id="no" name="no" value="no">
             <label for="no">Female</label>
+        </div> -->
+        <label for="select-sez">Size:</label>
+        <div>
+            <select id="select-sex">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
         </div>
     </div>
     <span class="tcr-apply-to-adopt submit-filter">View More</span>
@@ -106,12 +132,14 @@
         <?php
         foreach ($pets as $pet):
 
-            $photos =  $pet->media->photos->photo;
 
+            //name
             $name = (array) $pet->name;
             $name = $name[$gross.'t'];
 
+            //photos
             $photo_to_use = array();
+            $photos =  $pet->media->photos->photo;
             foreach ($photos as $photo){
                 $photo = (array) $photo;
 
@@ -121,6 +149,29 @@
             }
             $photo_url = $photo_to_use[$gross.'t'];
 
+            //sex
+            $pet_sex_array = (array) $pet->sex;
+            $pet_sex = $pet_sex_array[$gross.'t'];
+
+
+            //breed
+            $breed_list = [];
+            foreach($pet->breeds->breed as $breed) {
+                if (gettype($breed) == 'string') {
+                    $breed_list [] =  $breed.'';
+                } else {
+                    $breeds = (array)$breed;
+                    $breed_list[] = $breeds[$gross.'t'].'';
+                }
+            }
+
+            //age
+            $age_array = (array) $pet->age;
+            $pet_age = $age_array[$gross.'t'];
+
+            //description
+            $description_array = (array) $pet->description;
+            $pet_description = $description_array[$gross.'t'];
             ?>
 
             <div class="tcr-item" data>
@@ -129,13 +180,33 @@
                     <div class="tcr-cat-image" style="background-image:url('<?=$photo_url;?>');"></div>
 
                 </div>
-                <p class="breed"></p>
-                <p class="age"></p>
-                <p class="description"></p>
                 <span class="tcr-apply-to-adopt">View More</span>
                 <div class="tcr-cat-data">
-                    <h2><?=$name;?></h2>
-                    <div class="tcr-cat-image" style="background-image:url('<?=$photo_url;?>');"></div>
+                    <div class="tcr-data-row">
+                        <div class="tcr-data-col pl-0">
+                            <div class="tcr-cat-image" style="background-image:url('<?=$photo_url;?>');"></div>
+                        </div>
+                        <div class="tcr-data-col">
+                            <h2><strong>Name: </strong><?=$name;?></h2>
+                            <div class="tcr-modal-info-section">
+                                <p><strong>Sex: </strong><?=$pet_sex;?></p>
+                                <p><strong>Breeds: </strong>
+                                    <?php 
+                                    $counter = 1;
+                                    $breed_count = count($breed_list);    
+                                    foreach ($breed_list as $breed):
+                                        echo $breed;
+                                        if ($counter != $breed_count) echo ', ';
+                                        $counter++;
+                                     endforeach;?>
+                                </p>
+                                <p><strong>Age: </strong><?=$pet_age;?></p>
+                            </div>
+                        </div>
+                        <p><strong>Description: </strong><?=$pet_description;?></p>
+
+
+                    </div>
 
                 </div>
 
@@ -155,8 +226,13 @@
 <div class="tcr-cat-modal">
 
     <div class="tcr-cat-modal-content">
-        <button class="tcr-apply-button">Apply to Adopt </button>
         <span class="tcr-exit-modal">&times;</span>
+
+        <div class="tcr-modal-button-container">
+            <button class="tcr-view-info">View Info </button>
+            <button class="tcr-apply-button">Apply to Adopt </button>
+        </div>
+        
 
         <div class="tcr-modal-wrapper">
             <div class="tcr-cat-info">

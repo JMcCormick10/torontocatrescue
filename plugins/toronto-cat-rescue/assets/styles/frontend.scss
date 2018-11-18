@@ -11,7 +11,7 @@
 	border-radius: 0px;
 	transition: all 0.2s;
 	font-weight: bold;
-	font-family: 'Archivo Narrow', sans-serif;
+	font-family: 'Archivo Narrow', Arial, sans-serif;
 	&:hover,
 	&:focus,
 	&:active {
@@ -28,48 +28,64 @@ $blue: #24558d;
 $green: #41b1a0;
 $black: #000;
 
+html {
+	body {
+		font-size: 1.6rem;
+		&.no-overflow {
+			overflow: hidden;
+		}
+	}
+}
+
 .tcr-cat-modal{
-    position: fixed;
-    display: none;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+    &.tcr-cat-modal-show {
+		display: block;
+		// display: flex;
+		// align-items: center;
+    }
 
     .tcr-cat-modal-content{
-		overflow-y: scroll;
-		max-height: 100%;
-        position: fixed;
-        top: 10%;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: #fff;
-        max-width: 600px;
-        width: 95%;
-        margin: 0 auto;
-        min-height: 300px;
-        border-radius: 10px;
+    	position: relative;
+		background-color: #fefefe;
+	    margin: 15px auto; /* 15% from the top and centered */
+	    padding: 20px;
+	    border: 1px solid #888;
+	    width: 80%; /* Could be more or less, depending on screen size */
+	    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+	    animation-name: animatetop;
+	    animation-duration: 0.5s;
 
-        .tcr-exit-modal{
-            color: #000;
-            font-size: 50px;
-            right: 10px;
-            top: -15px;
-            position: absolute;
-            font-weight: 900;
-
-            &:hover{
-                cursor: pointer;
-            }
-
-        }
+		.tcr-exit-modal {
+			color: #aaa;
+		    float: right;
+		    font-size: 28px;
+		    font-weight: bold;
+		    &:hover,
+			&:focus {
+			    color: black;
+			    text-decoration: none;
+			    cursor: pointer;
+			}
+		}
     }
 }
-.tcr-cat-modal-show{
-	display: block;
+
+@keyframes animatetop {
+    from {top: 100px; opacity: 0}
+    to {top: 0; opacity: 1}
 }
+
 .tcr-archive-list{
     display: flex;
     flex-wrap: wrap;
@@ -81,6 +97,7 @@ $black: #000;
         margin-bottom: 15px;
 
         h3{
+        	font-family: 'Archivo Narrow', Arial, sans-serif;
             color: $blue;
             font-size: 25px;
             margin-bottom:0;
@@ -117,35 +134,25 @@ $black: #000;
         }
 
         .tcr-apply-to-adopt{
-            display: inline-block;
-            background-color: $green;
-            padding: 7px 15px;
-            border-radius: 10px;
-            color: #fff;
-            font-weight: 700;
-            font-size: 15px;
-
-            &:hover{
-                cursor: pointer;
-            }
-		}
-		
-		.tcr-cat-data{
-			display: none;
-		}
+            @include button-style;
+        }
 
     }
 }
 .tcr-apply-button {
 	@include button-style;
 }
+.tcr-view-info{
+	@include button-style;
+
+}
 
 .tcr-pet-form {
-	display: none;
+	// display: none;
 }
 
 form.wpcf7-form {
-	font-family: 'Lora', serif;
+	font-family: 'Lora', Georgia, serif;
 	p {
 		margin: 0px;
 		height: 0px;
@@ -304,28 +311,10 @@ form.wpcf7-form {
 	}
 	.wpcf7-field-groups {
 		.wpcf7-field-group-add  {
-			color: #fff;
-			background-color: #5cb85c;
-			border: 1px solid #5cb85c;
-			&:hover,
-			&:focus,
-			&:active {
-				color: #5cb85c;
-				background-color: #fff;
-				border: 1px solid #5cb85c;
-			}
+			@include button-style(#fff, #5cb85c, #5cb85c, #5cb85c, #fff, #5cb85c);
 		}
 		.wpcf7-field-group-remove  {
-			color: #fff;
-			background-color: #d9534f;
-			border: 1px solid #d9534f;
-			&:hover,
-			&:focus,
-			&:active {
-				color: #d9534f !important;
-				background-color: #fff !important;
-				border: 1px solid #d9534f !important;
-			}
+			@include button-style(#fff, #d9534f, #d9534f, #d9534f, #fff, #d9534f);
 		}
 	}
 }
@@ -337,11 +326,65 @@ form.wpcf7-form {
 	width: 95%;
 	margin: 0 auto;
 }
+.tcr-modal-button-container{
+	margin-bottom: 25px;
+	button{
+		margin-bottom: 10px;
+	}
+}
 .tcr-cat-info{
+
+	.tcr-data-row{
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -15px;
+
+		.tcr-data-col{
+			width: 50%;
+			padding: 0 15px;
+			
+			@media screen and (max-width: 767px){
+				width: 100%;
+				margin-bottom: 20px;
+
+				.tcr-cat-image{
+					max-height: 250px;
+				}
+			}
+
+			@media screen and (max-width: 500px){
+
+				.tcr-cat-image{
+					max-height: 150px;
+				}
+			}
+		}
+	}
+	h2{
+		margin: 0;
+	}
 	.tcr-cat-image{
 		width: 100%;
 		height: 300px;
 		background-size: cover;
 		background-position: center;
+		max-width: 500px;
 	}
+
+}
+
+.tcr-form-container{
+	display: none;
+}
+
+.tcr-cat-data{
+	display: none;
+}
+
+
+/*------------------------------- *\
+			UTILITY
+\*-------------------------------- */
+.pl-0{
+	padding-left: 0 !important;  
 }
