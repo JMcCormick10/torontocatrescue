@@ -1,0 +1,106 @@
+<input type="hidden" class="tcr-cat-id" name="tcr-cat-id"/><input type="hidden" class="tcr-cat-name" name="tcr-cat-name"/><div class="wrap">
+<label>Name <span class="required">*</span></label>
+[text* adoptersName placeholder "Name"]
+</div>
+<div class="wrap left">
+<label>Phone Number <span class="required">*</span></label>
+[tel* adoptersPhone class:phone placeholder "Phone Number"]
+</div>
+<div class="wrap right">
+<label>Alternative Phone Number</label>
+[tel adoptersAltPhone placeholder "Alternative Phone Number"]
+</div>
+<label>Email Address <span class="required">*</span></label>
+[email* adoptersEmail placeholder "Email Address"]
+<div class="wrap left large">
+<label>Address <span class="required">*</span></label>
+[text* adoptersAddress placeholder "Address"]
+</div>
+<div class="wrap right small">
+<label>Suite/Apt Number</label>
+[text adoptersSuite placeholder "Suite/Apt Number"]
+</div>
+<div class="wrap left">
+<label>City <span class="required">*</span></label>
+[text* adoptersCity placeholder "City"]
+</div>
+<div class="wrap right">
+<label>Postal Code <span class="required">*</span></label>
+[text* adoptersPostalCode placeholder "Postal Code"] 
+</div>
+<label>Do you...? <span class="required">*</span></label>
+[radio adoptersLivingSituation use_label_element "Own" "Rent" "Live with relatives" "Other"]
+[group otherLivingSituation]
+<label>Other <span class="required">*</span></label>
+[text* adoptersOtherLivingSituation placeholder "Other"]
+[/group]
+[group rentingLivingSituation]
+<label>Are cat permitted? <span class="required">*</span></label>
+[text* adoptersRentingLivingSituation placeholder "Are cats permitted?"]
+[/group]
+<label>Who are you adopting this cat for?</label>
+[text adoptersWhoIsTheCatFor placeholder "Myself"] 
+<label>How many child live in your home? <span class="required">*</span></label>
+[number* adoptersHowManyKids]
+[group howManyKids]
+<label>What are their ages? <span class="required">*</span></label>
+[text* adoptersKidsAges]
+[/group]
+<label>Does any member of your household suffer from allergies to cats? <span class="required">*</span></label>
+[radio adoptersAllergies use_label_element "Yes" "No"]
+<label>Have all household members agreed to adopt a cat(s)? <span class="required">*</span></label>
+[radio adoptersHouseholdAgreement use_label_element "Yes" "No"]
+<label>What will you do with the cat while on vacation? <span class="required">*</span></label>
+[textarea* adoptersVacationPlans]
+<div class="wrap">
+<label>Will the cat be kept...? <span class="required">*</span></label>
+[radio adoptersCatsLivingSituation use_label_element "Indoors" "Outdoors" "Both"]
+</div>
+<label>Please list the pets you currently own. [field_group OtherAnimals]
+<div class="fill-container">
+<div>
+<div class="wrap fill-6">
+<label>Type of animal</label>
+[text adoptersTypeOfAnimal]
+</div>
+<div class="wrap fill-6">
+<label>Sex</label>
+[radio adoptersSexOfAnimal use_label_element "M" "F"]
+</div>
+<div class="wrap fill-6">
+<label>Spayed or Neutered</label>
+[radio adoptersSpayedOrNeutered use_label_element "Yes" "No"]
+</div>
+</div>
+<div>
+<div class="wrap fill-6">
+<label>Age</label>
+[number adoptersAgeOfAnimal]
+</div>
+<div class="wrap fill-6">
+<label>Kept indoors or outdoors</label>
+[radio adoptersIndoorsOrOutdoors use_label_element "In" "Out" "Both"]
+</div>
+<div class="wrap fill-6">
+<label>Current on yearly vaccinations</label>
+[radio adoptersCurrentOnVaccines use_label_element "Yes" "No"]
+</div>
+</div>
+</div>
+[/field_group]
+<label>Name of Veternarian or Vet clinic <span class="required">*</span></label>
+[textarea* adoptersCurrentVet]
+<label>Are you prepared to handle the financial responsibility of a pet, including supplies, annual vet visits and potential medical emergencies? <span class="required">*</span></label>
+[radio adoptersMedicalResponsibility default:1 "yes" "no"]
+<div>
+<label>Applicant's Signature <span class="required">*</span></label>
+[signature* adoptersSignature]
+</div>
+<div>
+<label>Date <span class="required">*</span></label>
+[date* AdoptersDate]
+</div>
+[honeypot name-field-915 move-inline-css:true]
+<div class="wrap">
+[submit "Send"]
+</div>
