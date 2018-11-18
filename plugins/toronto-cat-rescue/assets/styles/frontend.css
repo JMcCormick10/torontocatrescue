@@ -117,10 +117,11 @@ html body {
   to {
     top: 0;
     opacity: 1; } }
-.tcr-no-cats {
+#tcr-no-cats {
   font-size: 2.5rem;
   text-align: center;
-  padding: 100px 15px; }
+  padding: 100px 15px;
+  display: none; }
 
 .tcr-archive-list {
   display: -webkit-box;

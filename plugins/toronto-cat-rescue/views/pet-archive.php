@@ -1,5 +1,4 @@
 <?php
-
 /* ----------------------------------------------- *\
                 THE FILTERS
 \* ----------------------------------------------- */
@@ -156,7 +155,7 @@
     </div>
 </div>
 
-<div class="tcr-no-cats">
+<div id="tcr-no-cats">
     <p><strong>We couldn't find your purrr-fect cat.</strong><br />Please update your search purrr-ametres.</p>
 </div>
 

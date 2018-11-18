@@ -95,9 +95,11 @@ jQuery(document).ready(function($) {
 	        console.log($container.data('isotope').filteredItems.length);
 	        console.log(filterValue);
 	        if ($container.data('isotope').filteredItems.length <= 0) {
-	            $('.tcr-no-cats').fadeIn();
+	        	console.log('fadein');
+	            $('#tcr-no-cats').fadeIn();
 	        } else {
-	            $('.tcr-no-cats').fadeOut();
+	        	console.log('fadeout');
+	            $('#tcr-no-cats').fadeOut();
 	        }
         }
     });
@@ -110,5 +112,6 @@ jQuery(document).ready(function($) {
 	        filter: '*'
 	    });
     	filters = {};
+    	$('#tcr-no-cats').fadeOut();
     })
 });
